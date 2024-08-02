@@ -3,6 +3,7 @@ import styles from "./Deposit.module.css"
 import Popup from 'reactjs-popup';
 import axios from "axios"
 import { AuthContext } from "../../context/AuthContext";
+import QR from "../../images/qr.jpg"
 
 export default function Deposit() {
     const [menu, setMenu] = useState([])
@@ -67,7 +68,7 @@ export default function Deposit() {
                                 <p className={styles.subTitle}>{item.desc}</p>
                                 <Popup trigger={<button className="btn-c"> Nạp tiền ngay</button>} modal>
                                     <div className={styles.info}>
-                                        <img src={`${PF}${item.detail.img}`} alt='Tên NH' />
+                                        <img src={QR} alt='Tên NH' />
                                         <h1>Ngân hàng : <span>{item.detail.name}</span></h1>
                                         <h2>Số tài khoản : <span>{item.detail.stk}</span>  <button>Copy</button></h2>
                                         <h2>Người thụ hưởng : <span>{item.detail.author}</span></h2>

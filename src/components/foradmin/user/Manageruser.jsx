@@ -7,6 +7,8 @@ import {Link} from "react-router-dom"
 export default function Manageruser() {
     const [dataUser, setDataUser] = useState([])
     const { user } = useContext(AuthContext)
+    const PF = process.env.REACT_APP_URL_IMG;
+    const apiUrl = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -15,7 +17,7 @@ export default function Manageruser() {
                 // Đính kèm token vào tiêu đề Authorization
                 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
                 try {
-                    const res = await axios.get("http://localhost:8000/api/user/")
+                    const res = await axios.get(apiUrl + "/user/")
                     setDataUser(res.data.sort((p1, p2) => {
                         return new Date(p2.createdAt) - new Date(p1.createdAt)
                     }))
@@ -25,7 +27,7 @@ export default function Manageruser() {
             }
         }
         fetchPosts()
-    }, [user.token])
+    }, [user.token, apiUrl])
 
     return (
         <div className={styles.deposit}>
@@ -48,7 +50,7 @@ export default function Manageruser() {
                     {dataUser.map((item, index) => (
                         <tr key={item._id}>
                             <th scope="row">{index + 1}</th>
-                            <td><img className={styles.avatar} src='http://localhost:8000/images/NoAvatar.png' alt='avatar' /></td>
+                            <td><img className={styles.avatar} src={PF + '/NoAvatar.png'} alt='avatar' /></td>
                             <td>{item.username}</td>
                             <td>{item.balance}</td>
                             <td>{item.totalDeposit}</td>

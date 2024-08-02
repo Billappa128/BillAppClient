@@ -65,10 +65,10 @@ export default function Menubar() {
       </Link>
       <h5>MENU KHÁC</h5><i className="fa-solid "></i>
       <a rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">
-      <Icontext icon={"fa-share-nodes"} text={"Liên kết giúp đỡ"} />
+      <Icontext icon={"fa-share-nodes"} text={"Kiếm tiền"} />
         </a>
       <a rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">
-      <Icontext icon={"fa-shop"} text={"Shop app & Phôi"} />
+      <Icontext icon={"fa-shop"} text={"Tạo CCCD"} />
         </a>
       <span onClick={handleLogout}><Icontext icon={"fa-right-from-bracket"} text={"Đăng xuất"} /></span>
     </div>

@@ -55,6 +55,13 @@ export const banking = [
         }
     },
     {
+        name : "VCB Moi",
+        short : "vcbn",
+        img : {
+            logo : VCB
+        }
+    },
+    {
         name : "BIDV",
         short : "bidv",
         img : {
@@ -208,43 +215,43 @@ export const balance = [
 export const priceBanking = [
     {
         name : "Vietcombank",
-        price : 50
+        price : 20
     },
     {
         name : "Vietinbank",
-        price : 50
+        price : 20
     },
     {
         name : "Techcombank",
-        price : 50
+        price : 20
     },
     {
         name : "MB Bank",
-        price : 50
+        price : 20
     },
     {
         name : "VP Bank",
-        price : 50
+        price : 20
     },
     {
         name : "ACB",
-        price : 50
+        price : 20
     },
     {
         name : "BIDV",
-        price : 50
+        price : 20
     },
     {
         name : "TP Bank",
-        price : 50
+        price : 20
     },
     {
         name : "Agribank",
-        price : 50
+        price : 20
     },
     {
         name : "MoMo",
-        price : 50
+        price : 20
     },
 
 ]
@@ -252,43 +259,43 @@ export const priceBanking = [
 export const priceChecking = [
     {
         name : "Vietcombank",
-        price : 30
+        price : 10
     },
     {
         name : "Vietinbank",
-        price : 30
+        price : 10
     },
     {
         name : "Techcombank",
-        price : 30
+        price : 10
     },
     {
         name : "MB Bank",
-        price : 30
+        price : 10
     },
     {
         name : "VP Bank",
-        price : 30
+        price : 10
     },
     {
         name : "ACB",
-        price : 30
+        price : 10
     },
     {
         name : "BIDV",
-        price : 30
+        price : 10
     },
     {
         name : "TP Bank",
-        price : 30
+        price : 10
     },
     {
         name : "Agribank",
-        price : 30
+        price : 10
     },
     {
         name : "MoMo",
-        price : 30
+        price : 10
     },
 
 ]
@@ -297,43 +304,43 @@ export const priceChecking = [
 export const priceBalance = [
     {
         name : "Vietcombank",
-        price : 10
+        price : 5
     },
     {
         name : "Vietinbank",
-        price : 10
+        price : 5
     },
     {
         name : "Techcombank",
-        price : 10
+        price : 5
     },
     {
         name : "MB Bank",
-        price : 10
+        price : 5
     },
     {
         name : "VP Bank",
-        price : 10
+        price : 5
     },
     {
         name : "ACB",
-        price : 10
+        price : 5
     },
     {
         name : "BIDV",
-        price : 10
+        price : 5
     },
     {
         name : "TP Bank",
-        price : 10
+        price : 5
     },
     {
         name : "Agribank",
-        price : 10
+        price : 5
     },
     {
         name : "MoMo",
-        price : 10
+        price : 5
     },
 
 ]
@@ -547,6 +554,7 @@ export const songMappings = {
     mbbanking11: require('./images/billbanking/mb/m11.jpg'),
     mbbanking12: require('./images/billbanking/mb/m12.jpg'),
     mbbanking13: require('./images/billbanking/mb/m13.jpg'),
+    mbbanking14: require('./images/billbanking/mb/mm1.jpg'),
     conong: require('./images/billbanking/mb/conong.png'),
     logo: require('./images/Logo.png'),
     pin: require('./images/pin/pin1.png'),
