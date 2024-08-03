@@ -13,6 +13,17 @@ export default function Deposit() {
     const apiUrl = process.env.REACT_APP_API_URL;
     const input = useRef()
 
+    const textRef = useRef(null);
+
+    const handleCopy = () => {
+        const text = textRef.current.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Đã sao chép stk');
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    };
+
     useEffect(() => {
         const fetchPosts = async () => {
             const res = await axios.get(apiUrl + "/info/")
@@ -25,7 +36,7 @@ export default function Deposit() {
             const max = 99999;
             const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
             setCapcha(randomNumber)
-          }
+        }
         fetchPosts()
         randomFiveDigitNumber()
     }, [apiUrl])
@@ -38,7 +49,7 @@ export default function Deposit() {
         const getDeposit = {
             user: user._id,
             amount: input.current.value,
-            desc : capcha,
+            desc: capcha,
         };
         if (token) {
             // Đính kèm token vào tiêu đề Authorization
@@ -70,7 +81,7 @@ export default function Deposit() {
                                     <div className={styles.info}>
                                         <img src={QR} alt='Tên NH' />
                                         <h1>Ngân hàng : <span>{item.detail.name}</span></h1>
-                                        <h2>Số tài khoản : <span>{item.detail.stk}</span>  <button>Copy</button></h2>
+                                        <h2>Số tài khoản : <span ref={textRef}>{item.detail.stk}</span>  <button onClick={handleCopy}>Copy</button></h2>
                                         <h2>Người thụ hưởng : <span>{item.detail.author}</span></h2>
                                         <h2>Nội dung ck : <span>{capcha}</span></h2>
                                         <form onSubmit={handleSubmit}>

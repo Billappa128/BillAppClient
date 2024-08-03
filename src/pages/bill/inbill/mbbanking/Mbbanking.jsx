@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import styles from "./Mbbanking.module.css"
 import html2canvas from 'html2canvas';
-import { nameBank, songMappings, wifiMappings, images } from '../../../../data';
+import { nameBank, songMappings1, wifiMappings1, images } from '../../../../data';
 import DatePicker from "react-datepicker";
 import { format } from 'date-fns';
 import diacritics from 'diacritics';
@@ -37,7 +37,7 @@ export default function Mbbanking() {
     const [selectedImage, setSelectedImage] = useState('image1');
 
     const imageOptions = [
-        { value: 'image1', label: 'Hình Nền 1', path: images.mbbanking6 },
+        { value: 'image1', label: 'Hình Nền 1', path: images.mbbanking14 },
         { value: 'image2', label: 'Hình Nền 2', path: images.mbbanking2 },
         { value: 'image3', label: 'Hình Nền 3', path: images.mbbanking3 },
         { value: 'image4', label: 'Hình Nền 4', path: images.mbbanking4 },
@@ -70,7 +70,7 @@ export default function Mbbanking() {
         setSelectedOption(e.target.value);
     };
 
-    const imageName = songChecked && selectedOption ? songMappings[selectedOption] : null;
+    const imageName = songChecked && selectedOption ? songMappings1[selectedOption] : null;
     // -------SÓNG ĐTH
 
     //-------SÓNG WIFI
@@ -85,7 +85,7 @@ export default function Mbbanking() {
         setSelectedOptionWifi(e.target.value);
     };
 
-    const imageWifi = wifiChecked && selectedOptionWifi ? wifiMappings[selectedOptionWifi] : null;
+    const imageWifi = wifiChecked && selectedOptionWifi ? wifiMappings1[selectedOptionWifi] : null;
 
     // -------SÓNG WIFI
 
@@ -99,7 +99,7 @@ export default function Mbbanking() {
     };
 
     const pinWidth = `${pinPercentage}%`;
-    const pinColor = pinPercentage < 20 ? "#ff3737" : '#FFF';
+    const pinColor = pinPercentage < 20 ? "#ff3737" : '#000';
     // --------HẾT PIN 
 
     const [formState, setFormState] = useState({
@@ -141,7 +141,7 @@ export default function Mbbanking() {
 
     const getH1Style = () => {
         return {
-            color: selectedImage === 'image2' || selectedImage === 'image6' || selectedImage === 'image10' ? 'white' : 'black',
+            color: selectedImage === 'image2' || selectedImage === 'image6' || selectedImage === 'image10' ? 'black' : 'white',
             // Các thuộc tính CSS khác (nếu có) có thể được thêm vào đây
         };
     };
@@ -387,14 +387,13 @@ export default function Mbbanking() {
                     </div>
                     <div ref={componentRef} className={`${styles.right} position-relative`}>
                         <img src={imageOptions.find((image) => image.value === selectedImage)?.path} alt={selectedImage} />
-                        <img src={images.conong} className={`${styles.conong} position-absolute`}  alt="conong" />
                         <span className={`${styles.date} position-absolute`}>{`${time}:17, ${formattedDate}`}</span>
                         <span className={`${styles.transactionCode} position-absolute`}>{`FT${transactionCode}`}</span>
                         <span className={`${styles.senderNumber} position-absolute`}>{`${senderNumber}`}</span>
                         <span className={`${styles.senderAccount} position-absolute text-uppercase`}>{diacritics.remove(senderAccount)}</span>
-                        <span className={`${styles.receiverAccount} position-absolute`}>{receiverAccount}</span>
+                        
                         <span className={`${styles.receiverName} position-absolute text-uppercase`}>{diacritics.remove(receiverName)}</span>
-                        <span style={getH1Style()} className={`${styles.amountNumber} position-absolute`}>{`${formattedAmount} VND`}</span>
+                        <span className={`${styles.amountNumber} position-absolute`}>{`${formattedAmount} VND`}</span>
                         <span className={`${styles.description} position-absolute`}>{diacritics.remove(description)}</span>
                         <div className={`${styles.taskbar}`}>
                             <div className={`${styles.timePhone}`}>{time}</div>
@@ -411,8 +410,8 @@ export default function Mbbanking() {
 
                         </div>
 
-                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{`${selectedBankData.mbname}`}<span className='text-uppercase'>{` (${selectedBankData.name})`}</span></span>}
-                        {selectedBankData && <img src={selectedBankData.icon} className={`${styles.iconBank} position-absolute`}  alt="iconBank" />}
+                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}><img src={selectedBankData.icon} className={`${styles.iconBank} mr-2`}  alt="iconBank" />{`${selectedBankData.name} `} 
+                        <span className='text-uppercase ml-2'>{` (${selectedBankData.shortname})`} - {receiverAccount}</span></span>}
                         <div ref={copyRef} className={styles.copy}>
                             <div>Bản quyền thuộc về </div>
                             <img src={images.logo} alt='logo' />

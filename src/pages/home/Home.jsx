@@ -26,11 +26,9 @@ import Tpbchecking from '../billchecking/tpbchecking/Tpbchecking'
 import Tcbbalance from '../billbalance/tcbbalance/Tcbbalance'
 import Vcbbalance from '../billbalance/vcbbalance/Vcbbalance'
 import Tpbbalance from '../billbalance/tpbbalance/Tpbbalance'
-import Vcbbankingvip from '../bill/inbill/vcbbankingVIP/Vcbbankingvip'
 import Profile from '../../components/profile/Profile'
 import Bidvbankingvip from '../bill/inbill/bidvbankingVIP/Bidvbankingvip'
 import Mbbchecking from '../billchecking/mbbchecking/Mbbchecking'
-import Vcbbankingnew from '../bill/inbill/vcbbankingNEW/Vcbbankingnew'
 
 export default function Home({filter}) {
   return (
@@ -50,8 +48,6 @@ export default function Home({filter}) {
           {/* Bill Banking */}
           {filter === 'billbanking-vtb' && <Vtbbanking />}
           {filter === 'billbanking-vcb' && <Vcbbanking />}
-          {filter === 'billbanking-vcbv' && <Vcbbankingvip />}
-          {filter === 'billbanking-vcbn' && <Vcbbankingnew />}
           {filter === 'billbanking-mb' && <Mbbanking />}
           {filter === 'billbanking-tcb' && <Techbanking />}
           {filter === 'billbanking-msb' && <Msbbanking />}

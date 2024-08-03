@@ -93,85 +93,110 @@
     color: #fff;
 }
 
+.iconBank{
+    width: 40px !important;
+    height: auto !important;
+    top: 458px;
+    left: 38px;
+}
 
 
 /* --------------REF ----------- */
 .date {
     font-size: 20px;
-    top: 456px;
-    left: 184px;
-    color: #adadad;
-}
-
-.time {
-    font-size: 18px;
-    top: 450px;
-    right: 342px;
-    color: #adadad;
+    top: 358px;
+    width: 591px;
+    left: 0px;
+    text-align: center;
+    color: #585858;
 }
 
 .transactionCode {
-    font-size: 20px;
-    top: 855px;
-    right: 26px;
+    font-family: "Semibold", sans-serif;
+    font-size: 24px;
+    top: 892px;
+    right: 38px;
     color: #ffffff;
+}
+
+.free {
+    font-family: "Semibold", sans-serif;
+    font-size: 24px;
+    top: 735px;
+    right: 38px;
+    color: #000;
 }
 
 
 .receiverAccount {
-    font-size: 20px;
-    top: 645px;
-    right: 26px;
+    font-family: "Semibold", sans-serif;
+    font-size: 24px;
+    top: 417px;
+    right: 38px;
     color: #ffffff;
 }
 
 .receiverName {
-    font-size: 20px;
-    top: 557px;
-    right: 26px;
+    font-family: "Semibold", sans-serif;
+    font-size: 24px;
+    top: 479px;
+    right: 38px;
     color: #ffffff;
 }
 
 .nameBank {
-    width: 225px;
-    font-size: 20px;
-    top: 741px;
-    right: 26px;
+    font-family: "Semibold", sans-serif;
+    width: 400px;
+    font-size: 24px;
+    top: 552px;
+    right: 38px;
     color: #ffffff;
-    line-height: 24px;
+    line-height: 26px;
     text-align: end;
 }
 
-.amountNumber {
+.boxAmountNumber {
     text-align: center;
     width: 591px;
     font-family: "Bold", sans-serif;
-    font-size: 39px;
-    top: 396px;
-    right: -4px;
-    color: #72bf01;
+    font-size: 38px;
+    top: 290px;
+    right: 24px;
+    color: #204A32;
 }
 
-.amountText {
-    font-family: "Bold", sans-serif;
-    font-size: 10px;
-    top: 296px;
-    right: 19px;
-    color: #0066aa;
+.amountNumber::after {
+    content: "VND";
+    font-weight: 200;
+    font-size: 20px;
+    top: 0px;
+    right: -50px;
+    position: absolute;
+    color: #398928;
+}
+
+.subAmountNumber{
+    text-align: center;
+    width: 591px;
+    font-size: 28px;
+    top: 290px;
+    right: 0px;
+    color: #204A32;
 }
 
 .description {
+    font-family: "Semibold", sans-serif;
     width: 225px;
-    font-size: 20px;
-    top: 945px;
-    right: 26px;
+    font-size: 24px;
+    top: 650px;
+    right: 38px;
     color: #ffffff;
     line-height: 24px;
     text-align: end;
 }
 
 /* Bản quyền */
-.copy{
+.copy {
     position: absolute;
     top: 183px;
     left: 49px;
@@ -184,12 +209,12 @@
     align-items: center;
 }
 
-.copy div{
+.copy div {
     font-size: 20px;
     color: #404656;
 }
 
-.copy img{
+.copy img {
     width: 100px;
 }
 
@@ -197,60 +222,61 @@
 
 /* Tác vụ */
 
-.taskbar{
+.taskbar {
     width: 100%;
     position: absolute;
-    top: 19px;
+    top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 33px;
+    padding: 0 60px;
 }
 
 .timePhone {
     font-family: "SanFranciscoText-Regular", sans-serif;
     font-size: 21px;
-    color: #ffffff;
+    font-weight: bold;
+    color: #000;
 }
 
-.taskbarRight{
+.taskbarRight {
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
 
-.taskbarRight img{
+.taskbarRight img {
     width: 24px;
 }
 
-.imageWifi{
+.imageWifi {
     width: 40px !important;
     margin: -5.5px;
 }
 
 
-.inputPin{
+.inputPin {
     background-color: var(--background-color);
     color: var(--main-color);
 }
 
-.boxPin{
+.boxPin {
     width: 100%;
     height: 29px;
 }
 
-.pinne{
+.pinne {
     width: 25px;
 }
 
-.pinne img{
+.pinne img {
     width: 38px;
     height: 17px;
     top: 6px;
 }
 
-.pinne div{
+.pinne div {
     top: 9px;
-        left: 4px;
-        border-radius: 2px
+    left: 4px;
+    border-radius: 2px
 }

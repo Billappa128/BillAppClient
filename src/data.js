@@ -48,20 +48,6 @@ export const banking = [
         }
     },
     {
-        name : "VCB VIP",
-        short : "vcbv",
-        img : {
-            logo : VCB
-        }
-    },
-    {
-        name : "VCB Moi",
-        short : "vcbn",
-        img : {
-            logo : VCB
-        }
-    },
-    {
         name : "BIDV",
         short : "bidv",
         img : {
@@ -349,14 +335,16 @@ export const priceBalance = [
 export const nameBank = [
     {
         name : "Techcombank",
-        fullname : "Ngân hàng TMCP Kỹ Thương Việt Nam",
+        fullname: "Ngân hàng TMCP Kỹ Thương Việt Nam",
+        shortname : "TCB",
         acbname : "NH TMCP Kỹ Thương Việt Nam",
         vcbname : "Ngân hàng Kỹ Thương Việt Nam",
         mbname : "Kỹ Thương Việt Nam",
         icon : iconTCB
     },
     {
-        name : "Vietcombank",
+        name: "Vietcombank",
+        shortname : "VCB",
         fullname : "Ngân hàng TMCP Ngoại thương Việt Nam",
         acbname : "NH TMCP Ngoại thương Việt Nam",
         vcbname : "Ngân hàng Ngoại thương Việt Nam",
@@ -364,21 +352,24 @@ export const nameBank = [
         icon : iconVCB
     },
     {
-        name : "Agribank",
+        name: "Agribank",
+        shortname : "AGR",
         fullname : "Ngân hàng Nông nghiệp và Phát triển Nông thôn VN",
         acbname : "NH Nông nghiệp và Phát triển Nông thôn VN",
         vcbname : "Ngân hàng Nông nghiệp VN",
         mbname : "Nông nghiệp VN",
     },
     {
-        name : "Oceanbank",
+        name: "Oceanbank",
+        shortname : "OCB",
         fullname : "Ngân hàng Đại Dương",
         acbname : "NH Đại Dương",
         vcbname : "Ngân hàng Đại Dương",
         mbname : "Đại Dương",
     },
     {
-        name : "BIDV",
+        name: "BIDV",
+        shortname : "BIDV",
         fullname : "Ngân hàng Đầu tư và Phát triển Việt Nam",
         acbname : "NH Đầu tư và Phát triển Việt Nam",
         vcbname : "Ngân hàng Đầu tư và Phát triển Việt Nam",
@@ -386,7 +377,8 @@ export const nameBank = [
         icon : iconBIDV
     },
     {
-        name : "VietinBank",
+        name: "VietinBank",
+        shortname : "VTB",
         fullname : "Ngân hàng Công Thương Việt Nam",
         acbname : "NH Công Thương Việt Nam",
         vcbname : "Ngân hàng Công Thương Việt Nam",
@@ -394,14 +386,16 @@ export const nameBank = [
         icon : iconVTB
     },
     {
-        name : "MBBank",
+        name: "MBBank",
+        shortname : "MB",
         fullname : "Ngân hàng TMCP Quân đội",
         acbname : "NH TMCP Quân đội",
         vcbname : "Ngân hàng Quân đội",
         mbname : "Quân đội",
     },
     {
-        name : "ACB",
+        name: "ACB",
+        shortname : "ACB",
         fullname : "Ngân hàng TMCP Á Châu",
         acbname : "NH TMCP Á Châu",
         vcbname : "Ngân hàng Á Châu",
@@ -409,7 +403,8 @@ export const nameBank = [
         icon : iconACB
     },
     {
-        name : "SHB",
+        name: "SHB",
+        shortname : "SHB",
         fullname : "Ngân hàng TMCP Sài Gòn-Hà Nội",
         acbname : "NH TMCP Sài Gòn-Hà Nội",
         vcbname : "Ngân hàng Sài Gòn-Hà Nội",
@@ -417,7 +412,8 @@ export const nameBank = [
         icon : iconSHB
     },
     {
-        name : "LPB",
+        name: "LPB",
+        shortname : "LPB",
         fullname : "Ngân hàng TMCP Bưu điện Liên Việt",
         acbname : "NH TMCP Bưu điện Liên Việt",
         vcbname : "Ngân hàng Bưu điện Liên Việt",
@@ -425,14 +421,16 @@ export const nameBank = [
         icon : iconLPB
     },
     {
-        name : "SCB",
+        name: "SCB",
+        shortname : "SCB",
         fullname : "Ngân hàng TMCP Sài Gòn Thương Tín",
         acbname : "NH TMCP Sài Gòn Thương Tín",
         vcbname : "Ngân hàng Sài Gòn Thương Tín",
         mbname : "Sài Gòn Thương Tín",
     },
     {
-        name : "TPBank",
+        name: "TPBank",
+        shortname : "TPB",
         fullname : "Ngân hàng TMCP Tiên Phong",
         acbname : "NH TMCP Tiên Phong",
         vcbname : "Ngân hàng Tiên Phong",
@@ -440,7 +438,8 @@ export const nameBank = [
         icon : iconTPB
     },
     {
-        name : "VPBank",
+        name: "VPBank",
+        shortname : "VPB",
         fullname : "Ngân hàng TMCP Việt Nam Thịnh Vượng",
         acbname : "NH TMCP Việt Nam Thịnh Vượng",
         vcbname : "Ngân hàng Việt Nam Thịnh Vượng",
@@ -448,7 +447,8 @@ export const nameBank = [
         icon : iconVPB
     },
     {
-        name : "VIB",
+        name: "VIB",
+        shortname : "VIB",
         fullname : "Ngân hàng TMCP Quốc tế",
         acbname : "NH TMCP Quốc tế Viet Nam",
         vcbname : "Ngân hàng Quốc tế",
@@ -456,28 +456,32 @@ export const nameBank = [
         icon : iconVIB
     },
     {
-        name : "MSB",
+        name: "MSB",
+        shortname : "MSB",
         fullname : "Ngân hàng TMCP Hàng hải Việt Nam",
         acbname : "NH TMCP Hàng hải Việt Nam",
         vcbname : "Ngân hàng Hàng hải Việt Nam",
         mbname : "Hàng hải Việt Nam",
     },
     {
-        name : "OCB",
+        name: "OCB",
+        shortname : "OCB",
         fullname : "Ngân hàng TMCP Phương Đông",
         acbname : "NH TMCP Phương Đông",
         vcbname : "Ngân hàng Phương Đông",
         mbname : "Phương Đông",
     },
     {
-        name : "Eximbank",
+        name: "Eximbank",
+        shortname : "Eximbank",
         fullname : "Ngân hàng TMCP Xuất Nhập khẩu Việt Nam",
         acbname : "NH TMCP Xuất Nhập khẩu Việt Nam",
         vcbname : "Ngân hàng Xuất Nhập khẩu Việt Nam",
         mbname : "Xuất Nhập khẩu Việt Nam",
     },
     {
-        name : "PVcomBank",
+        name: "PVcomBank",
+        shortname : "PVB",
         fullname : "Ngân hàng TMCP Đại Chúng Việt Nam",
         acbname : "NH TMCP Đại Chúng Việt Nam",
         vcbname : "Ngân hàng Đại Chúng Việt Nam",
@@ -485,7 +489,8 @@ export const nameBank = [
         icon : iconPVB
     },
     {
-        name : "DongABank",
+        name: "DongABank",
+        shortname : "DAB",
         fullname : "Ngân hàng TMCP Đông Á",
         acbname : "NH TMCP Đông Á",
         vcbname : "Ngân hàng Đông Á",
@@ -493,7 +498,8 @@ export const nameBank = [
         icon : iconDAB
     },
     {
-        name : "Saigonbank",
+        name: "Saigonbank",
+        shortname : "SGB",
         fullname : "Ngân hàng TMCP Sài Gòn Công Thương",
         acbname : "NH TMCP Sài Gòn Công Thương",
         vcbname : "Ngân hàng Sài Gòn Công Thương",
@@ -501,7 +507,8 @@ export const nameBank = [
         icon : iconSGB
     },
     {
-        name : "BanVietBank",
+        name: "BanVietBank",
+        shortname : "BVB",
         fullname : "Ngân hàng TMCP Bản Việt",
         acbname : "NH TMCP Bản Việt",
         vcbname : "Ngân hàng Bản Việt",

@@ -70,7 +70,11 @@ export default function Menubar() {
       <a rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">
       <Icontext icon={"fa-shop"} text={"Tạo CCCD"} />
         </a>
+      <a rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">
+      <Icontext icon={"fa-shop"} text={"Bán Phôi"} />
+        </a>
       <span onClick={handleLogout}><Icontext icon={"fa-right-from-bracket"} text={"Đăng xuất"} /></span>
+      
     </div>
   )
 }

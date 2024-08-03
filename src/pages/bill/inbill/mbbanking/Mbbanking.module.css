@@ -97,10 +97,12 @@
 
 /* --------------REF ----------- */
 .date {
-    font-size: 23px;
-    top: 725px;
-    right: 40px;
-    color: #000;
+    color: #606570;
+    font-size: 20px;
+    text-align: center;
+    left: 0px;
+    width: 100%;
+    top: 412px;
 }
 
 .time {
@@ -112,23 +114,25 @@
 
 .transactionCode {
     font-size: 23px;
-    top: 842px;
-    right: 40px;
+    top: 774px;
+    right: 50px;
     color: #000;
+    font-weight: bold;
 }
 
 .senderNumber {
     font-size: 23px;
-    top: 600px;
-    right: 40px;
+    top: 724px;
+    right: 50px;
     color: #000;
+    font-weight: bold;
 }
 
 .senderAccount {
     font-family: "Bold", sans-serif;
     font-size: 23px;
-    top: 626px;
-    right: 40px;
+    top: 725px;
+    right: 50px;
     color: #000;
 }
 
@@ -141,29 +145,33 @@
 
 .receiverName {
     color: #000;
-    font-family: Bold,sans-serif;
+    font-family: Bold, sans-serif;
     font-size: 30px;
-    left: 108px;
-    top: 422px;
+    text-align: center;
+    left: 0px;
+    width: 100%;
+    top: 522px;
 }
 
 .nameBank {
     color: #000;
-    font-size: 23px;
-    left: 108px;
-    line-height: 20px;
-    top: 498px;
-    width: 419px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-align: center;
+    left: 0px;
+    width: 100%;
+    top: 582px;
 }
 
 .amountNumber {
     width: 591px;
     display: flex;
-    font-family: "Bold", sans-serif;
-    top: 167px;
+    top: 337px;
     right: 0;
-    font-size: 65px;
-    color: #000;
+    font-size: 48px;
+    color: #6780DA;
     justify-content: center;
     align-items: center;
 }
@@ -177,13 +185,12 @@
 }
 
 .description {
-    width: 230px;
-    font-size: 23px;
-    top: 677px;
-    right: 40px;
     color: #000;
-    line-height: 22px;
-    text-align: end;
+    font-size: 24px;
+    text-align: center;
+    left: 0px;
+    width: 100%;
+    top: 632px;
 }
 
 .conong{
@@ -243,7 +250,7 @@
 .timePhone {
     font-family: "SanFranciscoText-Regular", sans-serif;
     font-size: 21px;
-    color: #ffffff;
+    color: #000;
 }
 
 .taskbarRight{

@@ -80,7 +80,7 @@ export default function Dashboard() {
               <p className="card-text">Vui lòng tham gia vào Group để nhận
                 thông báo và hỗ trợ
                 từ trang web.
-                <a className={styles.cusLink} rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">Tại Đây</a>
+                <a className={styles.cusLink} rel="noopener noreferrer" target="_blank" href="https://t.me/billshopvngate">Tại Đây</a>
               </p>
 
             </div>

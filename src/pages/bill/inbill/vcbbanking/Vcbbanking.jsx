@@ -1,14 +1,11 @@
-import React, { useState, useRef, useContext, useEffect  } from 'react'
+import React, { useState, useRef, useContext, useEffect } from 'react'
 import { AuthContext } from "../../../../context/AuthContext";
 import styles from "./Vcbbanking.module.css"
-import VCB1 from "../../../../images/billbanking/vcb/v2.jpg"
-import VCB2 from "../../../../images/billbanking/vcb/v3.jpg"
-import VCB3 from "../../../../images/billbanking/vcb/v4.jpg"
-import VCB4 from "../../../../images/billbanking/vcb/v5.jpg"
+import VCB1 from "../../../../images/billbanking/vcb/v6.jpg"
 import html2canvas from 'html2canvas';
-import { nameBank, songMappings, wifiMappings , songMappings1, wifiMappings1} from '../../../../data';
+import { nameBank, songMappings, wifiMappings, songMappings1, wifiMappings1 } from '../../../../data';
 import logo from "../../../../images/Logo.png"
-import Pin from "../../../../images/pin/pin1.png"
+import Pin from "../../../../images/pin/pin.png"
 import DatePicker from "react-datepicker";
 import randomstring from 'randomstring';
 import { format } from 'date-fns';
@@ -42,10 +39,7 @@ export default function Vcbbanking() {
     const [selectedImage, setSelectedImage] = useState('image1');
 
     const imageOptions = [
-        { value: 'image1', label: 'Hình Nền 1', path: VCB3 },
-        { value: 'image2', label: 'Hình Nền 2', path: VCB4 },
-        { value: 'image3', label: 'Hình Nền 3', path: VCB2 },
-        { value: 'image4', label: 'Hình Nền 4', path: VCB1 },
+        { value: 'image1', label: 'Hình Nền 1', path: VCB1 },
         // Thêm các hình ảnh khác vào đây
     ];
 
@@ -66,7 +60,7 @@ export default function Vcbbanking() {
         setSelectedOption(e.target.value);
     };
 
-    const imageName = songChecked && selectedOption && (selectedImage === 'image1' || selectedImage === 'image2') ? songMappings[selectedOption] : songMappings1[selectedOption];
+    const imageName = songChecked && selectedOption && (selectedImage === 'image1' || selectedImage === 'image2') ? songMappings1[selectedOption] : songMappings[selectedOption];
     // -------SÓNG ĐTH
 
     //-------SÓNG WIFI
@@ -81,7 +75,7 @@ export default function Vcbbanking() {
         setSelectedOptionWifi(e.target.value);
     };
 
-    const imageWifi = wifiChecked && selectedOptionWifi && (selectedImage === 'image1' || selectedImage === 'image2') ? wifiMappings[selectedOptionWifi] : wifiMappings1[selectedOptionWifi];
+    const imageWifi = wifiChecked && selectedOptionWifi && (selectedImage === 'image1' || selectedImage === 'image2') ? wifiMappings1[selectedOptionWifi] : wifiMappings[selectedOptionWifi];
 
     // -------SÓNG WIFI
 
@@ -95,7 +89,7 @@ export default function Vcbbanking() {
     };
 
     const pinWidth = `${pinPercentage}%`;
-    const pinColor = (pinPercentage < 20) ? "#ff3737" : ((selectedImage === 'image1' || selectedImage === 'image2') ? "#FFF" : "#000");
+    const pinColor = (pinPercentage < 20) ? "#ff3737" : ((selectedImage === 'image1' || selectedImage === 'image2') ? "#000" : "#FFF");
 
 
     // --------HẾT PIN 
@@ -115,14 +109,14 @@ export default function Vcbbanking() {
     // const formattedDate = date ? format(new Date(date), 'dd/MM/yyyy') : '';
     const getFormattedDate = (dateString) => {
         if (!dateString) return '';
-    
+
         const daysOfWeek = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
         const date = new Date(dateString);
         const dayOfWeek = daysOfWeek[date.getDay()];
         const dayOfMonth = String(date.getDate()).padStart(2, '0'); // Định dạng ngày thành chuỗi với 2 chữ số, thêm '0' phía trước nếu cần
         const month = String(date.getMonth() + 1).padStart(2, '0'); // Định dạng tháng thành chuỗi với 2 chữ số, thêm '0' phía trước nếu cần
         const year = date.getFullYear();
-    
+
         return `${dayOfWeek} ${dayOfMonth}/${month}/${year}`;
     };
 
@@ -159,7 +153,7 @@ export default function Vcbbanking() {
     // Hàm trả về đối tượng chứa các thuộc tính CSS tùy chỉnh
     const getH1Style = () => {
         return {
-            color: selectedImage === 'image3' || selectedImage === 'image4' ? 'black' : 'white',
+            color: selectedImage === 'image3' || selectedImage === 'image4' ? 'white' : 'black',
             // Các thuộc tính CSS khác (nếu có) có thể được thêm vào đây
         };
     };
@@ -172,21 +166,21 @@ export default function Vcbbanking() {
         copyRef.current.style.display = "none";
         const timestamp = Date.now(); // Lấy thời gian hiện tại dưới dạng timestamp
         const filename = `${timestamp}.png`; // Tạo tên file dựa trên timestamp
-    
+
         html2canvas(componentRef.current).then(async (canvas) => {
-          const image = canvas.toDataURL();
-          const blob = await fetch(image).then((res) => res.blob());
-          const formData = new FormData();
-          formData.append("name", filename);
-          formData.append('file', blob);
-    
-          // Gọi hàm handleSubmit từ utils.js và truyền các thông tin cần thiết
-          await handleSubmit(formData, user, dispatch, filename, blob);
-          setProcessing(false);
-          // Các phần xử lý khác của handleFormSubmit
+            const image = canvas.toDataURL();
+            const blob = await fetch(image).then((res) => res.blob());
+            const formData = new FormData();
+            formData.append("name", filename);
+            formData.append('file', blob);
+
+            // Gọi hàm handleSubmit từ utils.js và truyền các thông tin cần thiết
+            await handleSubmit(formData, user, dispatch, filename, blob);
+            setProcessing(false);
+            // Các phần xử lý khác của handleFormSubmit
         });
         copyRef.current.style.display = "initial";
-      };
+    };
 
     const nameBankRef = useRef(null);
 
@@ -196,11 +190,11 @@ export default function Vcbbanking() {
         const lenghtNameBank = nameBankElement?.innerText.length
         console.log(lenghtNameBank)
         if (lenghtNameBank > maxLength) {
-            nameBankElement.style.top = '728px'; // Điều chỉnh top thành 500px khi nội dung vượt quá 20 kí tự
+            nameBankElement.style.top = '552px'; // Điều chỉnh top thành 500px khi nội dung vượt quá 20 kí tự
         } else {
-            nameBankElement.style.top = '741px'; // Đặt lại top về 515px khi nội dung không vượt quá 20 kí tự
+            nameBankElement.style.top = '552px'; // Đặt lại top về 515px khi nội dung không vượt quá 20 kí tự
         }
-      }, [selectedBankData]);
+    }, [selectedBankData]);
 
     return (
         <div>
@@ -292,7 +286,7 @@ export default function Vcbbanking() {
                                         <label className="form-label" htmlFor="form6Example1">Số tiền bằng SỐ</label>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div className="row mb-4">
                                 <div className="col">
@@ -384,20 +378,23 @@ export default function Vcbbanking() {
                                 ))}
                             </select>
                             <button type='submit' className="btn-c btn-block mb-4" tabindex="4" disabled={processing}>
-                            {processing ? "Đang xử lý..." : "In bill ngay"}
-                        </button>
+                                {processing ? "Đang xử lý..." : "In bill ngay"}
+                            </button>
                         </form>
                     </div>
                     <div ref={componentRef} className={`${styles.right} position-relative`}>
                         <img src={imageOptions.find((image) => image.value === selectedImage)?.path} alt={selectedImage} />
-                        <span  className={`${styles.date} position-absolute`}>{`${time} ${getFormattedDate(date)}`}</span>
+                        <span className={`${styles.date} position-absolute`}>{`${time} ${getFormattedDate(date)}`}</span>
                         <span style={getH1Style()} className={`${styles.transactionCode} position-absolute`}>{transactionCode}</span>
                         <span style={getH1Style()} className={`${styles.receiverAccount} position-absolute`}>{receiverAccount}</span>
                         <span style={getH1Style()} className={`${styles.receiverName} position-absolute text-uppercase`}>{diacritics.remove(receiverName)}</span>
-                        <span className={`${styles.amountNumber} position-absolute`}>{`${formattedAmount} VND`}</span>
+                        <span className={`${styles.free} position-absolute`}>Miễn phí</span>
+                        <div className={`${styles.boxAmountNumber} position-absolute`}>
+                            <span className={`${styles.amountNumber} position-relative`}>{`${formattedAmount}`}</span>
+                        </div>
                         <span style={getH1Style()} className={`${styles.description} position-absolute`}>{diacritics.remove(description)}</span>
                         <div className={`${styles.taskbar}`}>
-                            <div style={getH1Style()} className={`${styles.timePhone}`}>{time}</div>
+                            <div className={`${styles.timePhone}`}>{time}</div>
                             <div className={styles.taskbarRight}>
                                 {imageName && <img className={`${styles.imageSong}`} src={imageName} alt={`WIFI${selectedOption}`} />}
                                 {imageWifi && <img className={`${styles.imageWifi}`} src={imageWifi} alt={`WIFI${selectedOptionWifi}`} />}
@@ -411,7 +408,9 @@ export default function Vcbbanking() {
 
                         </div>
 
-                        {selectedBankData && <span ref={nameBankRef} style={getH1Style()} className={`${styles.nameBank} position-absolute`}>{`${selectedBankData.vcbname}`}<span className='text-uppercase'>{` (${selectedBankData.name})`}</span></span>}
+                        
+
+                        {selectedBankData && <span ref={nameBankRef} style={getH1Style()} className={`${styles.nameBank} position-absolute`}><img src={selectedBankData.icon} className={`${styles.iconBank} mr-2`}  alt="iconBank" />{`${selectedBankData.name}`}<div className='text-uppercase' style={{fontSize : "20px"}}>{` ${selectedBankData.vcbname}`}</div></span>}
                         <div ref={copyRef} className={styles.copy}>
                             <div>Bản quyền thuộc về </div>
                             <img src={logo} alt='logo' />
