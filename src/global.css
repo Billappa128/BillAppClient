@@ -36,6 +36,13 @@
         url("./fonts/SanFrancisco/SanFranciscoText-Regular.otf") format("truetype");
 }
 
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/MyCustom.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --main-color: rgb(115, 103, 240);
     --text-second-color: #d0d2d6;

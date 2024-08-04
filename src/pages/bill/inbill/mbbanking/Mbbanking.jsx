@@ -389,7 +389,7 @@ export default function Mbbanking() {
                         <img src={imageOptions.find((image) => image.value === selectedImage)?.path} alt={selectedImage} />
                         <span className={`${styles.date} position-absolute`}>{`${time}:17, ${formattedDate}`}</span>
                         <span className={`${styles.transactionCode} position-absolute`}>{`FT${transactionCode}`}</span>
-                        <span className={`${styles.senderNumber} position-absolute`}>{`${senderNumber}`}</span>
+                        {/* <span className={`${styles.senderNumber} position-absolute`}>{`${senderNumber}`}</span> */}
                         <span className={`${styles.senderAccount} position-absolute text-uppercase`}>{diacritics.remove(senderAccount)}</span>
                         
                         <span className={`${styles.receiverName} position-absolute text-uppercase`}>{diacritics.remove(receiverName)}</span>
@@ -410,7 +410,7 @@ export default function Mbbanking() {
 
                         </div>
 
-                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}><img src={selectedBankData.icon} className={`${styles.iconBank} mr-2`}  alt="iconBank" />{`${selectedBankData.name} `} 
+                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}><img src={selectedBankData.iconMb} className={`${styles.iconBank} mr-2`}  alt="iconBank" />{`${selectedBankData.name} `} 
                         <span className='text-uppercase ml-2'>{` (${selectedBankData.shortname})`} - {receiverAccount}</span></span>}
                         <div ref={copyRef} className={styles.copy}>
                             <div>Bản quyền thuộc về </div>

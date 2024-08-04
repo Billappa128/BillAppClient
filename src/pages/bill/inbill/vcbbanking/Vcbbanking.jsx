@@ -410,7 +410,7 @@ export default function Vcbbanking() {
 
                         
 
-                        {selectedBankData && <span ref={nameBankRef} style={getH1Style()} className={`${styles.nameBank} position-absolute`}><img src={selectedBankData.icon} className={`${styles.iconBank} mr-2`}  alt="iconBank" />{`${selectedBankData.name}`}<div className='text-uppercase' style={{fontSize : "20px"}}>{` ${selectedBankData.vcbname}`}</div></span>}
+                        {selectedBankData && <span ref={nameBankRef} style={getH1Style()} className={`${styles.nameBank} position-absolute`}><img src={selectedBankData.icon} className={`${styles.iconBank} mr-2`}  alt="iconBank" />{`${selectedBankData.name}`}<div style={{fontSize : "18px"}}>{` ${selectedBankData.fullname}`}</div></span>}
                         <div ref={copyRef} className={styles.copy}>
                             <div>Bản quyền thuộc về </div>
                             <img src={logo} alt='logo' />

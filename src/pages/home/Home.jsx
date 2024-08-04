@@ -29,6 +29,7 @@ import Tpbbalance from '../billbalance/tpbbalance/Tpbbalance'
 import Profile from '../../components/profile/Profile'
 import Bidvbankingvip from '../bill/inbill/bidvbankingVIP/Bidvbankingvip'
 import Mbbchecking from '../billchecking/mbbchecking/Mbbchecking'
+import Cccd from '../cccd/Cccd'
 
 export default function Home({filter}) {
   return (
@@ -44,6 +45,7 @@ export default function Home({filter}) {
           {filter === 'service' && <Service />}
           {filter === 'bill' && <Bankingbill />}
           {filter === 'profile' && <Profile />}
+          {filter === 'cccd' && <Cccd />}
 
           {/* Bill Banking */}
           {filter === 'billbanking-vtb' && <Vtbbanking />}

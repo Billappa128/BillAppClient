@@ -67,9 +67,9 @@ export default function Menubar() {
       <a rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">
       <Icontext icon={"fa-share-nodes"} text={"Kiếm tiền"} />
         </a>
-      <a rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">
-      <Icontext icon={"fa-shop"} text={"Tạo CCCD"} />
-        </a>
+        <Link to="/cccd" className="link">
+        <Icontext icon={"fa-shop"} text={"Tạo CCCD"} />
+      </Link>
       <a rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">
       <Icontext icon={"fa-shop"} text={"Bán Phôi"} />
         </a>
