@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import styles from "./AgrBanking.module.css"
 import AGR from "../../../../images/billbanking/ck-agr.jpg"
 import html2canvas from 'html2canvas';
-import { nameBank, songMappings, wifiMappings } from '../../../../data';
+import { nameBank, songMappings1, wifiMappings1 } from '../../../../data';
 import logo from "../../../../images/Logo.png"
 import Pin from "../../../../images/pin/pin1.png"
 import DatePicker from "react-datepicker";
@@ -31,6 +31,13 @@ export default function AgrBanking() {
     const selectedBankData = nameBank.find((bank) => bank.name === selectedBank); // Tìm dữ liệu ngân hàng tương ứng với tên ngân hàng được chọn
 
     // Ramdom
+    function generateRandomSixDigitNumber() {
+        let randomNumber = '';
+        for (let i = 0; i < 6; i++) {
+          randomNumber += Math.floor(Math.random() * 10); // Tạo số ngẫu nhiên từ 0-9
+        }
+        return randomNumber;
+      }
     const randomString = nanoid(15);
 
     // -------Thay Hinh Nen
@@ -58,7 +65,7 @@ export default function AgrBanking() {
         setSelectedOption(e.target.value);
     };
 
-    const imageName = songChecked && selectedOption ? songMappings[selectedOption] : null;
+    const imageName = songChecked && selectedOption ? songMappings1[selectedOption] : null;
     // -------SÓNG ĐTH
 
     //-------SÓNG WIFI
@@ -73,7 +80,7 @@ export default function AgrBanking() {
         setSelectedOptionWifi(e.target.value);
     };
 
-    const imageWifi = wifiChecked && selectedOptionWifi ? wifiMappings[selectedOptionWifi] : null;
+    const imageWifi = wifiChecked && selectedOptionWifi ? wifiMappings1[selectedOptionWifi] : null;
 
     // -------SÓNG WIFI
 
@@ -87,13 +94,13 @@ export default function AgrBanking() {
     };
 
     const pinWidth = `${pinPercentage}%`;
-    const pinColor = pinPercentage < 20 ? "#ff3737" : '#FFF';
+    const pinColor = pinPercentage < 20 ? "#ff3737" : '#000';
     // --------HẾT PIN 
 
     const [formState, setFormState] = useState({
         date: "",
         time: "",
-        transactionCode: randomString,
+        transactionCode: generateRandomSixDigitNumber(),
         senderNumber: "",
         senderAccount: "",
         receiverAccount: "",
@@ -113,6 +120,9 @@ export default function AgrBanking() {
         }));
 
     };
+
+    // Set date
+    const formattedDate = date ? format(new Date(date), 'dd-MM-yyyy') : '';
 
     //Set time
     const [selectedTime, setSelectedTime] = useState(null);
@@ -149,21 +159,21 @@ export default function AgrBanking() {
         copyRef.current.style.display = "none";
         const timestamp = Date.now(); // Lấy thời gian hiện tại dưới dạng timestamp
         const filename = `${timestamp}.png`; // Tạo tên file dựa trên timestamp
-    
+
         html2canvas(componentRef.current).then(async (canvas) => {
-          const image = canvas.toDataURL();
-          const blob = await fetch(image).then((res) => res.blob());
-          const formData = new FormData();
-          formData.append("name", filename);
-          formData.append('file', blob);
-    
-          // Gọi hàm handleSubmit từ utils.js và truyền các thông tin cần thiết
-          await handleSubmit(formData, user, dispatch, filename, blob);
-          setProcessing(false);
-          // Các phần xử lý khác của handleFormSubmit
+            const image = canvas.toDataURL();
+            const blob = await fetch(image).then((res) => res.blob());
+            const formData = new FormData();
+            formData.append("name", filename);
+            formData.append('file', blob);
+
+            // Gọi hàm handleSubmit từ utils.js và truyền các thông tin cần thiết
+            await handleSubmit(formData, user, dispatch, filename, blob);
+            setProcessing(false);
+            // Các phần xử lý khác của handleFormSubmit
         });
         copyRef.current.style.display = "initial";
-      };
+    };
     return (
         <div>
             <div className="content-body pb-5">
@@ -221,7 +231,7 @@ export default function AgrBanking() {
                                 </div>
 
                             </div>
-                            
+
                             <div className="row mb-4">
                                 <div className="col">
                                     <div className="form-outline">
@@ -263,8 +273,18 @@ export default function AgrBanking() {
                                             name="transactionCode"
                                             value={transactionCode}
                                             onChange={handleInputChange}
-                                            id="form6Example1" placeholder='1XQ6q-7jnO99587' className={`form-control ${styles.inputCus}`} />
+                                            id="form6Example1" placeholder='123456' className={`form-control ${styles.inputCus}`} />
                                         <label className="form-label" htmlFor="form6Example1">Mã GD</label>
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <div className="form-outline">
+                                        <input type="text"
+                                            name="description"
+                                            value={description}
+                                            onChange={handleInputChange}
+                                            id="form6Example1" placeholder='Nguyen Van A chuyen tien' className={`form-control ${styles.inputCus}`} />
+                                        <label className="form-label" htmlFor="form6Example1">Nội dung</label>
                                     </div>
                                 </div>
                             </div>
@@ -336,7 +356,7 @@ export default function AgrBanking() {
                                 ))}
                             </select>
                             <button type='submit' className="btn-c btn-block mb-4" tabindex="4" disabled={processing}>
-                            {processing ? "Đang xử lý..." : "In bill ngay"}
+                                {processing ? "Đang xử lý..." : "In bill ngay"}
                             </button>
                         </form>
                     </div>
@@ -345,7 +365,9 @@ export default function AgrBanking() {
                         <span className={`${styles.receiverAccount} position-absolute`}>{receiverAccount}</span>
                         <span className={`${styles.receiverName} position-absolute text-uppercase`}>{diacritics.remove(receiverName)}</span>
                         <span className={`${styles.amountNumber} position-absolute`}>{`${formattedAmount} VND`}</span>
-                        <span className={`${styles.description} position-absolute`}>{transactionCode}</span>
+                        <span className={`${styles.date} position-absolute`}>{`${formattedDate} ${time}:17`}</span>
+                        <span className={`${styles.transactionCode} position-absolute`}>Mã giao dịch: {transactionCode}</span>
+                        <span className={`${styles.description} position-absolute`}>{description}</span>
                         <div className={`${styles.taskbar}`}>
                             <div className={`${styles.timePhone}`}>{time}</div>
                             <div className={styles.taskbarRight}>
@@ -361,7 +383,7 @@ export default function AgrBanking() {
 
                         </div>
 
-                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{selectedBankData.fullname}</span>}
+                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{selectedBankData.shortname}</span>}
                         <div ref={copyRef} className={styles.copy}>
                             <div>Bản quyền thuộc về </div>
                             <img src={logo} alt='logo' />

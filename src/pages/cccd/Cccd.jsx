@@ -12,9 +12,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import { handleSubmit } from '../../utils';
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { RemoveVietnameseAccents } from 'remove-vietnamese-accents';
 
 export default function Cccd() {
     const { user, dispatch } = useContext(AuthContext);
+    const removeVietnameseAccents = new RemoveVietnameseAccents()
     // const [formattedAmount, setFormattedAmount] = useState("");
     // const [amountNumber, setAmountNumber] = useState("")
     const [photo, setPhoto] = useState(null);
@@ -71,49 +73,50 @@ export default function Cccd() {
 
     const formatText = (name) => {
         // Tách chuỗi thành mảng các từ
-        const words = name.split(' ');
+        const convertWords = removeVietnameseAccents.remove(name)
+        const words = convertWords.split(' ');
         let formattedText = '';
-    
+
         // Duyệt qua các phần tử và tạo chuỗi định dạng
         for (let i = 0; i < words.length; i++) {
             if (i > 0) {
                 // Tính số lượng dấu < giữa các phần tử
                 const numOfSigns = Math.max(0, words.length - i);
-                formattedText += '<'.repeat(numOfSigns); 
+                formattedText += '<'.repeat(numOfSigns);
             }
             formattedText += words[i];
         }
-    
+
         // Đảm bảo tổng độ dài không vượt quá 30 ký tự
-        if (formattedText.length < 28) {
-            const remainingLength = 28 - formattedText.length;
+        if (formattedText.length < 27) {
+            const remainingLength = 27 - formattedText.length;
             const filler = '<'.repeat(remainingLength);
             formattedText += filler;
         }
-    
+
         return formattedText;
     };
 
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        copyRef.current.style.display = "none";
+        // copyRef.current.style.display = "none";
         const timestamp = Date.now(); // Lấy thời gian hiện tại dưới dạng timestamp
         const filename = `${timestamp}.png`; // Tạo tên file dựa trên timestamp
 
         html2canvas(componentRef.current).then(async (canvas) => {
-          const image = canvas.toDataURL();
-          const blob = await fetch(image).then((res) => res.blob());
-          const formData = new FormData();
-          formData.append("name", filename);
-          formData.append('file', blob);
+            const image = canvas.toDataURL();
+            const blob = await fetch(image).then((res) => res.blob());
+            const formData = new FormData();
+            formData.append("name", filename);
+            formData.append('file', blob);
 
-          // Gọi hàm handleSubmit từ utils.js và truyền các thông tin cần thiết
-          await handleSubmit(formData, user, dispatch, filename, blob);
+            // Gọi hàm handleSubmit từ utils.js và truyền các thông tin cần thiết
+            await handleSubmit(formData, user, dispatch, filename, blob);
 
-          // Các phần xử lý khác của handleFormSubmit
+            // Các phần xử lý khác của handleFormSubmit
         });
-        copyRef.current.style.display = "initial";
+        // copyRef.current.style.display = "initial";
     };
 
     return (
@@ -280,8 +283,8 @@ export default function Cccd() {
                             <button type="submit" className="btn-c btn-block mb-4">Tạo ngay</button>
                         </form>
                     </div>
-                    <div ref={componentRef} className={`${styles.right}`}>
-                        <div className={`${styles.righttop}`}>
+                    <div className={`${styles.right}`}>
+                        <div ref={componentRef} className={`${styles.righttop}`}>
                             <img src={images.frontcccd} alt={"frontcccd"} />
                             {photo && (
                                 <img
@@ -298,48 +301,22 @@ export default function Cccd() {
                             <span className={`${styles.gender} position-absolute`}>{gender}</span>
                             <span className={`${styles.placeOrigin} position-absolute`}>{placeOrigin}</span>
                             <span className={`${styles.placeResiden} position-absolute`}>{placeResiden}</span>
+                            {/* <div ref={copyRef} className={styles.copy}>
+                                <div>Bản quyền thuộc về </div>
+                                <img src={logo} alt='logo' />
+                            </div> */}
                         </div>
                         <div className={`${styles.rightbottom}`}>
                             <img src={images.backcccd} alt={"frontcccd"} />
                             <span className={`${styles.dateStart} position-absolute`}>{getFormattedDate(dateStart)}</span>
                             <span className={`${styles.description} position-absolute`}>
-                                <div>{`IDVNM${noNumber.substring(3)}8${noNumber}<<8`}</div>
-                                <div>{`${getFormattedDateBack(dateDob)}6M2627015VNM<<<<<<<<<<<6`}</div>
-                                <div style={{ textTransform: "uppercase" }}>{formatText(name)}</div>
+                                <div className={styles.addfront}>{`IDVNM${noNumber.substring(3)}8${noNumber}<<8`}</div>
+                                <div className={styles.addfront}>{`${getFormattedDateBack(dateDob)}6M2627015VNM<<<<<<<<<<6`}</div>
+                                <div className={styles.addfront} style={{ textTransform: "uppercase" }}>{formatText(name)}</div>
                             </span>
                         </div>
-                        {/* <span className={`${styles.date} position-absolute`}>{formattedDate}</span>
-                        <span className={`${styles.time} position-absolute`}>{time}</span>
-                        <span className={`${styles.transactionCode} position-absolute`}>{transactionCode}</span>
-                        <span className={`${styles.senderNumber} position-absolute`}>{`********${senderNumber}`}</span>
-                        <span className={`${styles.senderAccount} position-absolute text-uppercase`}>{diacritics.remove(senderAccount)}</span>
-                        <span className={`${styles.receiverAccount} position-absolute`}>{receiverAccount}</span>
-                        <span className={`${styles.receiverName} position-absolute text-uppercase`}>{diacritics.remove(receiverName)}</span>
-                        <span className={`${styles.amountNumber} position-absolute`}>{`${formattedAmount} VND`}</span>
-                        <span className={`${styles.amountText} position-absolute`}>{capitalizedText}</span>
-                        <span className={`${styles.description} position-absolute`}>{diacritics.remove(description)}</span>
-                        <div className={`${styles.taskbar}`}>
-                            <div className={`${styles.timePhone}`}>{time}</div>
-                            <div className={styles.taskbarRight}>
-                                {imageName && <img className={`${styles.imageSong}`} src={imageName} alt={`WIFI${selectedOption}`} />}
-                                {imageWifi && <img className={`${styles.imageWifi}`} src={imageWifi} alt={`WIFI${selectedOptionWifi}`} />}
-                                <span className={`${styles.boxPin}`}>
-                                    <div className={`pin-container position-relative ${styles.pinne}`}>
-                                        <img className='position-absolute' src={Pin} alt='pin' />
-                                        <div className="position-absolute" style={{ height: 6.5, width: `calc(${pinWidth} + 2px)`, backgroundColor: pinColor }}></div>
-                                    </div>
-                                </span>
-                            </div>
 
-                        </div>
 
-                        
-
-                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{selectedBankData.fullname}</span>}
-                        <div ref={copyRef} className={styles.copy}>
-                            <div>Bản quyền thuộc về </div>
-                            <img src={logo} alt='logo' />
-                        </div> */}
                     </div>
                 </div>
 

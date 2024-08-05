@@ -97,10 +97,11 @@
 
 /* --------------REF ----------- */
 .date {
-    font-size: 8px;
-    top: 91px;
-    right: 40px;
-    color: #9d9d9d;
+    font-size: 24px;
+    font-weight: bold;
+    top: 354px;
+    right: 50px;
+    color: #302E2E;
 }
 
 .time {
@@ -111,17 +112,21 @@
 }
 
 .transactionCode {
-    font-size: 8px;
-    top: 100px;
-    right: 19px;
-    color: #9d9d9d;
+    font-size: 24px;
+    font-weight: bold;
+    top: 405px;
+    right: 50px;
+    color: #CB4489;
 }
 
 .senderNumber {
-    font-size: 10px;
-    top: 186px;
-    right: 19px;
-    color: #4f4f4f;
+    width: 300px;
+    font-family: "Bold", sans-serif;
+    font-size: 35px;
+    top: 618px;
+    right: 69px;
+    color: #302E2E;
+    text-align: end;
 }
 
 .senderAccount {
@@ -133,36 +138,38 @@
 
 .receiverAccount {
     font-family: "Bold", sans-serif;
-    font-size: 10px;
-    top: 223px;
-    right: 19px;
-    color: #24003c;
+    font-size: 24px;
+    top: 862px;
+    right: 65px;
+    color: #302E2E;
 }
 
 .receiverName {
     font-family: "Bold", sans-serif;
-    font-size: 10px;
-    top: 234px;
-    right: 19px;
-    color: #24003c;
+    font-size: 24px;
+    top: 728px;
+    right: 65px;
+    color: #302E2E;
 }
 
 .nameBank {
-    width: 130px;
-    font-size: 10px;
-    top: 261px;
-    right: 19px;
-    color: #4f4f4f;
-    line-height: 10px;
+    width: 300px;
+    font-family: "Bold", sans-serif;
+    font-size: 24px;
+    top: 928px;
+    right: 65px;
+    color: #302E2E;
     text-align: end;
 }
 
 .amountNumber {
     font-family: "Bold", sans-serif;
-    font-size: 10px;
-    top: 284px;
-    right: 19px;
-    color: #0066aa;
+    font-size: 44px;
+    top: 264px;
+    right: 0px;
+    color: #302E2E;
+    width: 100%;
+    text-align: center;
 }
 
 .amountText {
@@ -174,13 +181,33 @@
 }
 
 .description {
-    width: 130px;
-    font-size: 10px;
-    top: 356px;
-    right: 19px;
-    color: #4f4f4f;
-    line-height: 10px;
+    width: 300px;
+    font-family: "Bold", sans-serif;
+    font-size: 24px;
+    top: 1018px;
+    right: 65px;
+    color: #302E2E;
     text-align: end;
+}
+
+.free {
+    width: 300px;
+    font-family: "Bold", sans-serif;
+    font-size: 24px;
+    top: 1084px;
+    right: 65px;
+    color: #302E2E;
+    text-align: end;
+}
+
+.feed {
+    width: 420px;
+    font-size: 21px;
+    line-height: 1.2;
+    top: 100px;
+    left: 85px;
+    color: #302E2E;
+    text-align: start;
 }
 
 /* Bản quyền */
@@ -223,7 +250,8 @@
 .timePhone {
     font-family: "SanFranciscoText-Regular", sans-serif;
     font-size: 21px;
-    color: #ffffff;
+    color: #000;
+    font-weight: bold;
 }
 
 .taskbarRight{

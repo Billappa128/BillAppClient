@@ -98,42 +98,57 @@
 /* --------------REF ----------- */
 
 .receiverAccount {
-    font-size: 24px;
-    top: 574px;
-    left: 47px;
-    color: #565656;
+    font-size: 22px;
+    top: 432px;
+    left: 296px;
+    color: #333333;
 }
 
 .receiverName {
-     font-size: 24px;
-    top: 683px;
-    left: 47px;
-    color: #fb9119;
+    font-size: 22px;
+    top: 382px;
+    left: 296px;
+    color: #333333;
 }
 
 .nameBank {
-    width: 390px;
-    font-size: 21px;
-    top: 917px;
-    left: 47px;
-    color: #565656;
-    line-height: 22px;
-    text-align: start;
+    font-size: 22px;
+    top: 484px;
+    left: 296px;
+    color: #333333;
+}
+
+.date {
+    font-size: 22px;
+    top: 585px;
+    left: 296px;
+    color: #333333;
+}
+
+.description {
+    font-size: 22px;
+    top: 637px;
+    left: 296px;
+    color: #333333;
 }
 
 .amountNumber {
     font-family: "Bold", sans-serif;
-    font-size: 33px;
-    top: 454px;
-    left: 60px;
-    color: #f3f3f3;
+    font-size: 42px;
+    top: 200px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    color: #B01137;
 }
 
-.description {
-    font-size: 24px;
-    top: 797px;
-    left: 47px;
-    color: #565656;
+.transactionCode {
+    font-size: 22px;
+    top: 260px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    color: #747474;
 }
 
 /* Bản quyền */
@@ -175,8 +190,9 @@
 
 .timePhone {
     font-family: "SanFranciscoText-Regular", sans-serif;
+    font-weight: bold;
     font-size: 21px;
-    color: #ffffff;
+    color: #000;
 }
 
 .taskbarRight{

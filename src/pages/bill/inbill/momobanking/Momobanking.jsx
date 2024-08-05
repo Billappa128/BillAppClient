@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react'
 import styles from "./Momobanking.module.css"
-import MOMO from "../../../../images/billbanking/ck-momo.jpeg"
+import MOMO from "../../../../images/billbanking/ck-momo.jpg"
 import html2canvas from 'html2canvas';
-import { nameBank, songMappings, wifiMappings } from '../../../../data';
+import { nameBank, songMappings1, wifiMappings1 } from '../../../../data';
 import logo from "../../../../images/Logo.png"
 import Pin from "../../../../images/pin/pin1.png"
 import DatePicker from "react-datepicker";
@@ -30,6 +30,13 @@ export default function Momobanking() {
     const selectedBankData = nameBank.find((bank) => bank.name === selectedBank); // Tìm dữ liệu ngân hàng tương ứng với tên ngân hàng được chọn
 
     // Ramdom
+    function generateRandomNumber() {
+        let randomNumber = '';
+        for (let i = 0; i < 11; i++) {
+          randomNumber += Math.floor(Math.random() * 10); // Tạo số ngẫu nhiên từ 0-9
+        }
+        return randomNumber;
+      }
     const randomString = nanoid(15);
 
     // -------Thay Hinh Nen
@@ -57,7 +64,7 @@ export default function Momobanking() {
         setSelectedOption(e.target.value);
     };
 
-    const imageName = songChecked && selectedOption ? songMappings[selectedOption] : null;
+    const imageName = songChecked && selectedOption ? songMappings1[selectedOption] : null;
     // -------SÓNG ĐTH
 
     //-------SÓNG WIFI
@@ -72,7 +79,7 @@ export default function Momobanking() {
         setSelectedOptionWifi(e.target.value);
     };
 
-    const imageWifi = wifiChecked && selectedOptionWifi ? wifiMappings[selectedOptionWifi] : null;
+    const imageWifi = wifiChecked && selectedOptionWifi ? wifiMappings1[selectedOptionWifi] : null;
 
     // -------SÓNG WIFI
 
@@ -86,13 +93,13 @@ export default function Momobanking() {
     };
 
     const pinWidth = `${pinPercentage}%`;
-    const pinColor = pinPercentage < 20 ? "#ff3737" : '#FFF';
+    const pinColor = pinPercentage < 20 ? "#ff3737" : '#000';
     // --------HẾT PIN 
 
     const [formState, setFormState] = useState({
         date: "",
         time: "",
-        transactionCode: randomString,
+        transactionCode: generateRandomNumber(),
         senderNumber: "",
         senderAccount: "",
         receiverAccount: "",
@@ -137,7 +144,7 @@ export default function Momobanking() {
 
     const handleInputAmount = (e) => {
         const amount = parseFloat(e.target.value.replace(/,/g, "")); // Chuyển đổi giá trị thành số và loại bỏ dấu phẩy
-        const formattedAmount = isNaN(amount) ? "" : new Intl.NumberFormat("en-US").format(amount); // Định dạng giá trị có dấu phẩy
+        const formattedAmount = isNaN(amount) ? "" : new Intl.NumberFormat("vi-VN").format(amount); // Định dạng giá trị có dấu phẩy
         setFormattedAmount(formattedAmount); // Cập nhật giá trị đã định dạng
         setAmountNumber(e.target.value)
     };
@@ -220,7 +227,7 @@ export default function Momobanking() {
                                 </div>
 
                             </div>
-                            <div className="row mb-4">
+                            {/* <div className="row mb-4">
                                 <div className="col">
                                     <div className="form-outline">
                                         <input type="text"
@@ -241,7 +248,7 @@ export default function Momobanking() {
                                         <label className="form-label" htmlFor="form6Example2">Tên người gửi</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="row mb-4">
                                 <div className="col">
                                     <div className="form-outline">
@@ -275,7 +282,7 @@ export default function Momobanking() {
                                         <label className="form-label" htmlFor="form6Example1">Số tiền bằng SỐ</label>
                                     </div>
                                 </div>
-                                <div className="col">
+                                {/* <div className="col">
                                     <div className="form-outline">
                                         <input type="text"
                                             name="amountText"
@@ -284,7 +291,7 @@ export default function Momobanking() {
                                             id="form6Example2" placeholder='Ba mươi nghìn đồng' className={`form-control ${styles.inputCus}`} />
                                         <label className="form-label" htmlFor="form6Example2">Số tiền bằng CHỮ</label>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="row mb-4">
                                 <div className="col">
@@ -380,16 +387,19 @@ export default function Momobanking() {
                     </div>
                     <div ref={componentRef} className={`${styles.right} position-relative`}>
                         <img src={imageOptions.find((image) => image.value === selectedImage)?.path} alt={selectedImage} />
-                        <span className={`${styles.date} position-absolute`}>{formattedDate}</span>
-                        <span className={`${styles.time} position-absolute`}>{time}</span>
-                        <span className={`${styles.transactionCode} position-absolute`}>{transactionCode}</span>
-                        <span className={`${styles.senderNumber} position-absolute`}>{`********${senderNumber}`}</span>
-                        <span className={`${styles.senderAccount} position-absolute text-uppercase`}>{diacritics.remove(senderAccount)}</span>
+                        <span className={`${styles.date} position-absolute`}>{time} - {formattedDate}</span>
+                        <span className={`${styles.transactionCode} position-absolute`}>{`${transactionCode}  >`}</span>
+                        <span className={`${styles.senderNumber} position-absolute`}>{`${formattedAmount}đ`}</span>
+                        <span className={`${styles.feed} position-absolute`}>{`Bạn đã chuyển thành công số tiền ${formattedAmount}đ đến `}
+                        <span style={{textTransform : "uppercase"}}>{receiverName}</span><span> ({selectedBankData?.shortname})</span>
+                        </span>
+                        {/* <span className={`${styles.senderAccount} position-absolute text-uppercase`}>{diacritics.remove(senderAccount)}</span> */}
                         <span className={`${styles.receiverAccount} position-absolute`}>{receiverAccount}</span>
                         <span className={`${styles.receiverName} position-absolute text-uppercase`}>{diacritics.remove(receiverName)}</span>
-                        <span className={`${styles.amountNumber} position-absolute`}>{`${formattedAmount} VND`}</span>
-                        <span className={`${styles.amountText} position-absolute`}>{capitalizedText}</span>
+                        <span className={`${styles.amountNumber} position-absolute`}>{`${formattedAmount}đ`}</span>
+                        {/* <span className={`${styles.amountText} position-absolute`}>{capitalizedText}</span> */}
                         <span className={`${styles.description} position-absolute`}>{diacritics.remove(description)}</span>
+                        <span className={`${styles.free} position-absolute`}>Miễn phí</span>
                         <div className={`${styles.taskbar}`}>
                             <div className={`${styles.timePhone}`}>{time}</div>
                             <div className={styles.taskbarRight}>
@@ -405,7 +415,7 @@ export default function Momobanking() {
 
                         </div>
 
-                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{selectedBankData.fullname}</span>}
+                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{selectedBankData.acbname} {`(${selectedBankData.shortname})`}</span>}
                         <div ref={copyRef} className={styles.copy}>
                             <div>Bản quyền thuộc về </div>
                             <img src={logo} alt='logo' />

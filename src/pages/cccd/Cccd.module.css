@@ -175,7 +175,6 @@
 }
 
 .description{
-    font-family: 'MyCustomFont', sans-serif;
     color: #252525;
     top: 230px;
     left: 0;
@@ -186,6 +185,10 @@
 
 .description div{
     margin: -10px 0;
+}
+
+.addfront{
+    font-family: 'MyCustomFont', sans-serif;
 }
 
 /* Bản quyền */
