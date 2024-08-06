@@ -38,18 +38,6 @@ export default function Mbbanking() {
 
     const imageOptions = [
         { value: 'image1', label: 'Hình Nền 1', path: images.mbbanking14 },
-        { value: 'image2', label: 'Hình Nền 2', path: images.mbbanking2 },
-        { value: 'image3', label: 'Hình Nền 3', path: images.mbbanking3 },
-        { value: 'image4', label: 'Hình Nền 4', path: images.mbbanking4 },
-        { value: 'image5', label: 'Hình Nền 5', path: images.mbbanking5 },
-        { value: 'image6', label: 'Hình Nền 6', path: images.mbbanking1 },
-        { value: 'image7', label: 'Hình Nền 7', path: images.mbbanking7 },
-        { value: 'image8', label: 'Hình Nền 8', path: images.mbbanking8 },
-        { value: 'image9', label: 'Hình Nền 9', path: images.mbbanking9 },
-        { value: 'image10', label: 'Hình Nền 10', path: images.mbbanking10 },
-        { value: 'image11', label: 'Hình Nền 11', path: images.mbbanking11 },
-        { value: 'image12', label: 'Hình Nền 12', path: images.mbbanking12 },
-        { value: 'image13', label: 'Hình Nền 13', path: images.mbbanking13 },
         // Thêm các hình ảnh khác vào đây
     ];
 

@@ -93,112 +93,118 @@
     color: #fff;
 }
 
-.iconBank{
-    width: 30px !important;
-    height: auto !important;
-    top: 458px;
-    left: 38px;
-}
 
 
 /* --------------REF ----------- */
 .date {
+    color: #606570;
     font-size: 20px;
-    top: 358px;
-    width: 591px;
-    left: 0px;
     text-align: center;
-    color: #585858;
+    left: 0px;
+    width: 100%;
+    top: 412px;
 }
 
-.transactionCode {
-    font-family: "Semibold", sans-serif;
-    font-size: 24px;
-    top: 892px;
-    right: 38px;
-    color: #ffffff;
-}
-
-.free {
-    font-family: "Semibold", sans-serif;
-    font-size: 24px;
-    top: 735px;
-    right: 38px;
+.time {
+    font-size: 10px;
+    top: 370px;
+    right: 75px;
     color: #000;
 }
 
+.transactionCode {
+    font-size: 22px;
+    top: 485px;
+    right: 45px;
+    color: #000;
+    font-weight: bold;
+}
+
+.senderNumber {
+    font-size: 22px;
+    top: 632px;
+    right: 45px;
+    color: #000;
+    font-weight: bold;
+}
+
+.senderAccount {
+    font-family: "Bold", sans-serif;
+    font-size: 22px;
+    top: 730px;
+    right: 50px;
+    color: #000;
+    width: 300px;
+    text-align: end;
+    line-height: 1;
+}
 
 .receiverAccount {
-    font-family: "Semibold", sans-serif;
-    font-size: 24px;
-    top: 417px;
-    right: 38px;
-    color: #ffffff;
+    font-size: 22px;
+    top: 705px;
+    right: 45px;
+    color: #000;
+    font-weight: bold;
+
 }
 
 .receiverName {
-    font-family: "Semibold", sans-serif;
-    font-size: 24px;
-    top: 486px;
-    right: 38px;
+    width: 340px;
     text-align: end;
-    width: 330px;
-    line-height: 1.1;
+    font-size: 22px;
+    top: 780px;
+    right: 45px;
+    color: #000;
+    font-weight: bold;
 }
 
 .nameBank {
-    font-family: "Semibold", sans-serif;
-    width: 400px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
-    top: 552px;
-    right: 38px;
-    color: #ffffff;
-    line-height: 26px;
-    text-align: end;
+    text-align: center;
+    left: 0px;
+    width: 100%;
+    top: 582px;
 }
 
-.boxAmountNumber {
-    text-align: center;
-    width: 591px;
+.amountNumber {
+    font-size: 22px;
+    top: 883px;
+    right: 45px;
+    color: #000;
+    font-weight: bold;
+}
+
+.amountText {
     font-family: "Bold", sans-serif;
-    font-size: 38px;
-    top: 290px;
-    right: 24px;
-    color: #204A32;
-}
-
-.amountNumber::after {
-    content: "VND";
-    font-weight: 200;
-    font-size: 20px;
-    top: 0px;
-    right: -50px;
-    position: absolute;
-    color: #398928;
-}
-
-.subAmountNumber{
-    text-align: center;
-    width: 591px;
-    font-size: 28px;
-    top: 290px;
-    right: 0px;
-    color: #204A32;
+    font-size: 10px;
+    top: 296px;
+    right: 19px;
+    color: #000;
 }
 
 .description {
-    font-family: "Semibold", sans-serif;
-    width: 225px;
-    font-size: 24px;
-    top: 650px;
-    right: 38px;
-    color: #ffffff;
-    line-height: 24px;
-    text-align: end;
+    font-size: 22px;
+    top: 957px;
+    right: 45px;
+    color: #000;
+    font-weight: bold;
 }
 
+.feed {
+    font-size: 22px;
+    top: 559px;
+    right: 45px;
+    color: #000;
+    font-weight: bold;
+}
+
+
 /* Bản quyền */
-.copy {
+.copy{
     position: absolute;
     top: 183px;
     left: 49px;
@@ -211,12 +217,12 @@
     align-items: center;
 }
 
-.copy div {
+.copy div{
     font-size: 20px;
     color: #404656;
 }
 
-.copy img {
+.copy img{
     width: 100px;
 }
 
@@ -224,61 +230,60 @@
 
 /* Tác vụ */
 
-.taskbar {
+.taskbar{
     width: 100%;
     position: absolute;
-    top: 30px;
+    top: 19px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px;
+    padding: 0 33px;
 }
 
 .timePhone {
     font-family: "SanFranciscoText-Regular", sans-serif;
     font-size: 21px;
-    font-weight: bold;
     color: #000;
 }
 
-.taskbarRight {
+.taskbarRight{
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
 
-.taskbarRight img {
+.taskbarRight img{
     width: 24px;
 }
 
-.imageWifi {
+.imageWifi{
     width: 40px !important;
     margin: -5.5px;
 }
 
 
-.inputPin {
+.inputPin{
     background-color: var(--background-color);
     color: var(--main-color);
 }
 
-.boxPin {
+.boxPin{
     width: 100%;
     height: 29px;
 }
 
-.pinne {
+.pinne{
     width: 25px;
 }
 
-.pinne img {
+.pinne img{
     width: 38px;
     height: 17px;
     top: 6px;
 }
 
-.pinne div {
+.pinne div{
     top: 9px;
-    left: 4px;
-    border-radius: 2px
+        left: 4px;
+        border-radius: 2px
 }

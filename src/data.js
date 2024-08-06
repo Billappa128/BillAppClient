@@ -75,7 +75,7 @@ import icon20 from "./images/logomini/icon/MBBANK/20.png"
 import icon21 from "./images/logomini/icon/MBBANK/21.png"
 // import icon22 from "./images/logomini/icon/MBBANK/22.png"
 import icon23 from "./images/logomini/icon/MBBANK/23.png"
-// import icon24 from "./images/logomini/icon/MBBANK/24.png"
+import icon24 from "./images/logomini/icon/MBBANK/24.png"
 import icon25 from "./images/logomini/icon/MBBANK/25.png"
 
 
@@ -170,6 +170,20 @@ export const banking = [
         short: "msb",
         img: {
             logo: MSB
+        }
+    },
+    {
+        name: "Sacombank",
+        short: "Sacom",
+        img: {
+            logo: icon8
+        }
+    },
+    {
+        name: "HDBank",
+        short: "HDB",
+        img: {
+            logo: icon24
         }
     },
 
@@ -618,21 +632,7 @@ export const wifiMappings1 = {
 
 
 export const images = {
-    mbbanking1: require('./images/billbanking/mb/m1.jpg'),
-    mbbanking2: require('./images/billbanking/mb/m2.jpg'),
-    mbbanking3: require('./images/billbanking/mb/m3.jpg'),
-    mbbanking4: require('./images/billbanking/mb/m4.jpg'),
-    mbbanking5: require('./images/billbanking/mb/m5.jpg'),
-    mbbanking6: require('./images/billbanking/mb/m6.jpg'),
-    mbbanking7: require('./images/billbanking/mb/m7.jpg'),
-    mbbanking8: require('./images/billbanking/mb/m8.jpg'),
-    mbbanking9: require('./images/billbanking/mb/m9.jpg'),
-    mbbanking10: require('./images/billbanking/mb/m10.jpg'),
-    mbbanking11: require('./images/billbanking/mb/m11.jpg'),
-    mbbanking12: require('./images/billbanking/mb/m12.jpg'),
-    mbbanking13: require('./images/billbanking/mb/m13.jpg'),
     mbbanking14: require('./images/billbanking/mb/mm1.jpg'),
-    conong: require('./images/billbanking/mb/conong.png'),
     logo: require('./images/Logo.png'),
     pin: require('./images/pin/pin1.png'),
     Banking: require("./images/banking.png"),
@@ -648,5 +648,7 @@ export const images = {
     backcccd: require("./images/cccd/back.jpg"),
     frontcccd: require("./images/cccd/front.jpg"),
     qrcode: require("./images/cccd/qrcode.png"),
+    sacombaking: require("./images/billbanking/ck-sacom.jpg"),
+    hdbanking: require("./images/billbanking/ck-hd.jpg"),
     // Thêm các hình ảnh khác tại đây
 };

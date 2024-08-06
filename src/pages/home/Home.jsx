@@ -30,6 +30,8 @@ import Profile from '../../components/profile/Profile'
 import Bidvbankingvip from '../bill/inbill/bidvbankingVIP/Bidvbankingvip'
 import Mbbchecking from '../billchecking/mbbchecking/Mbbchecking'
 import Cccd from '../cccd/Cccd'
+import Hdbanking from '../bill/inbill/hdbanking/Hdbanking'
+import Sacombanking from '../bill/inbill/sacombanking/Sacombanking'
 
 export default function Home({filter}) {
   return (
@@ -61,6 +63,8 @@ export default function Home({filter}) {
           {filter === 'billbanking-agr' && <AgrBanking />}
           {filter === 'billbanking-acb' && <Acbbanking />}
           {filter === 'billbanking-lpb' && <Lpbbanking />}
+          {filter === 'billbanking-hdb' && <Hdbanking />}
+          {filter === 'billbanking-sacom' && <Sacombanking />}
 
           {/* Bill Checking */}
           {filter === 'billchecking-tcb' && <Tcbchecking/>}

@@ -44,6 +44,8 @@ function App() {
           <Route path='/bill/banking/lpb' element={user ? <Home filter={"billbanking-lpb"} /> : <Login/>} />
           <Route path='/bill/banking/agr' element={user ? <Home filter={"billbanking-agr"} /> : <Login/>} />
           <Route path='/bill/banking/acb' element={user ? <Home filter={"billbanking-acb"} /> : <Login/>} />
+          <Route path='/bill/banking/sacom' element={user ? <Home filter={"billbanking-sacom"} /> : <Login/>} />
+          <Route path='/bill/banking/hdb' element={user ? <Home filter={"billbanking-hdb"} /> : <Login/>} />
 
           {/* Bill checking */}
           <Route path='/bill/checking' element={user ? <Home filter={"bill"} />: <Login/>}  />

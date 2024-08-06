@@ -96,7 +96,7 @@
 /* --------------REF ----------- */
 .date {
     font-family: "Bold", sans-serif;
-    font-size: 30px;
+    font-size: 26px;
     top: 843px;
     left: 37px;
     color: #000002;
@@ -111,8 +111,8 @@
 
 .transactionCode {
     font-family: "Bold", sans-serif;
-    font-size: 30px;
-    top: 948px;
+    font-size: 26px;
+    top: 918px;
     left: 37px;
     color: #000002;
 }
@@ -120,26 +120,25 @@
 
 .receiverAccount {
     font-family: "Bold", sans-serif;
-    font-size: 30px;
-    top: 642px;
+    font-size: 26px;
+    top: 620px;
     left: 37px;
     color: #000002;
 }
 
 .receiverName {
-    letter-spacing: -1px;
     font-family: "Bold", sans-serif;
-    font-size: 45px;
-    top: 400px;
-    left: 97px;
+    font-size: 26px;
+    top: 585px;
+    left: 37px;
     color: #000002;
 }
 
 .nameBank {
     width: 520px;
     font-family: "Bold", sans-serif;
-    font-size: 30px;
-    top: 613px;
+    font-size: 26px;
+    top: 699px;
     left: 37px;
     color: #000002;
     line-height: 27px;
@@ -148,7 +147,7 @@
 
 .amountNumber {
     font-family: "Bold", sans-serif;
-    font-size: 45px;
+    font-size: 48px;
     top: 451px;
     left: 39px;
     color: #000002;
@@ -165,11 +164,19 @@
 .description {
     font-family: "Bold", sans-serif;
     width: 520px;
-    font-size: 30px;
-    top: 751px;
+    font-size: 26px;
+    top: 776px;
     left: 37px;
     color: #000002;
     line-height: 27px;
+}
+
+.code{
+    font-family: "Bold", sans-serif;
+    font-size: 26px;
+    top: 995px;
+    left: 37px;
+    color: #000002;
 }
 
 /* Bản quyền */

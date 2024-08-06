@@ -105,8 +105,9 @@
 }
 
 .receiverName {
+    line-height: 1.1;
     font-size: 22px;
-    top: 382px;
+    top: 386px;
     left: 296px;
     color: #333333;
 }

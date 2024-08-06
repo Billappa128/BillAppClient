@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import styles from "./Techbanking.module.css"
-import TCB from "../../../../images/billbanking/ck-tcb.jpeg"
+import TCB from "../../../../images/billbanking/ck-tcb.jpg"
 import html2canvas from 'html2canvas';
 import { nameBank, songMappings1, wifiMappings1 } from '../../../../data';
 import logo from "../../../../images/Logo.png"
@@ -116,7 +116,7 @@ export default function Techbanking() {
         const month = date.getMonth() + 1; // Lưu ý: tháng trong JavaScript bắt đầu từ 0
         const year = date.getFullYear();
     
-        return `${dayOfMonth} Tháng ${month}, ${year}`;
+        return `${dayOfMonth} thg ${month}, ${year} lúc ${time}`;
       };
 
     const handleInputChange = (e) => {
@@ -155,6 +155,14 @@ export default function Techbanking() {
         setFormattedAmount(formattedAmount); // Cập nhật giá trị đã định dạng
         setAmountNumber(e.target.value)
     };
+
+    function generateRandomNumber() {
+        let randomNumber = '';
+        for (let i = 0; i < 6; i++) {
+          randomNumber += Math.floor(Math.random() * 10); // Tạo số ngẫu nhiên từ 0-9
+        }
+        return randomNumber;
+      }
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
@@ -373,6 +381,7 @@ export default function Techbanking() {
                         <span className={`${styles.receiverAccount} position-absolute`}>{receiverAccount}</span>
                         <span className={`${styles.receiverName} position-absolute text-uppercase`}>{diacritics.remove(receiverName)}</span>
                         <span className={`${styles.amountNumber} position-absolute`}>{`VND ${formattedAmount}`}</span>
+                        <span className={`${styles.code} position-absolute`}>{generateRandomNumber()}</span>
                         <span className={`${styles.description} position-absolute`}>{diacritics.remove(description)}</span>
                         <div className={`${styles.taskbar}`}>
                             <div className={`${styles.timePhone}`}>{time}</div>
@@ -389,7 +398,7 @@ export default function Techbanking() {
 
                         </div>
 
-                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{selectedBankData.vcbname}</span>}
+                        {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{selectedBankData.fullname}</span>}
                         <div ref={copyRef} className={styles.copy}>
                             <div>Bản quyền thuộc về </div>
                             <img src={logo} alt='logo' />
