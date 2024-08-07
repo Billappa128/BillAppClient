@@ -186,6 +186,55 @@ export const banking = [
             logo: icon24
         }
     },
+    {
+        name: "Bản Việt",
+        short: "BVBank",
+        img: {
+            logo: icon1
+        }
+    },
+    {
+        name: "Saigonbank",
+        short: "SGB",
+        img: {
+            logo: icon2
+        }
+    },
+    {
+        name: "DongABank",
+        short: "DAB",
+        img: {
+            logo: icon4
+        }
+    },
+    {
+        name: "Ocenbank",
+        short: "OCB",
+        img: {
+            logo: icon5
+        }
+    },
+    {
+        name: "PVcomBank",
+        short: "PVB",
+        img: {
+            logo: icon10
+        }
+    },
+    {
+        name: "Eximbank",
+        short: "Exim",
+        img: {
+            logo: icon25
+        }
+    },
+    {
+        name: "SHB",
+        short: "SHB",
+        img: {
+            logo: icon14
+        }
+    },
 
 ]
 export const checking = [

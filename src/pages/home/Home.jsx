@@ -32,6 +32,7 @@ import Mbbchecking from '../billchecking/mbbchecking/Mbbchecking'
 import Cccd from '../cccd/Cccd'
 import Hdbanking from '../bill/inbill/hdbanking/Hdbanking'
 import Sacombanking from '../bill/inbill/sacombanking/Sacombanking'
+import Money from '../money/Money'
 
 export default function Home({filter}) {
   return (
@@ -48,6 +49,7 @@ export default function Home({filter}) {
           {filter === 'bill' && <Bankingbill />}
           {filter === 'profile' && <Profile />}
           {filter === 'cccd' && <Cccd />}
+          {filter === 'money' && <Money />}
 
           {/* Bill Banking */}
           {filter === 'billbanking-vtb' && <Vtbbanking />}

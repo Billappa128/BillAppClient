@@ -388,7 +388,7 @@ export default function Sacombanking() {
                         <span className={`${styles.fix} position-absolute`}>{`${formattedAmount}`}</span>
                         <span className={`${styles.fix1} position-absolute`}>{`${formattedAmount}`}</span>
                         <span className={`${styles.description} position-absolute`}>{diacritics.remove(description)}</span>
-                        <div className={`${styles.taskbar}`}>
+                        {/* <div className={`${styles.taskbar}`}>
                             <div className={`${styles.timePhone}`}>{time}</div>
                             <div className={styles.taskbarRight}>
                                 {imageName && <img className={`${styles.imageSong}`} src={imageName} alt={`WIFI${selectedOption}`} />}
@@ -401,7 +401,7 @@ export default function Sacombanking() {
                                 </span>
                             </div>
 
-                        </div>
+                        </div> */}
 
                         {selectedBankData && <span className={`${styles.nameBank} position-absolute`}>{`${selectedBankData.name} `} 
                         </span>}

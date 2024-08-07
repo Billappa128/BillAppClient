@@ -26,6 +26,7 @@ function App() {
 
           <Route path='/deposit' element={user ? <Home filter={"deposit"}/> : <Login />} />
           <Route path='/cccd' element={user ? <Home filter={"cccd"}/> : <Login />} />
+          <Route path='/money' element={user ? <Home filter={"money"}/> : <Login />} />
 
           <Route path='/service' element={user ? <Home filter={"service"} /> : <Login />} />
 

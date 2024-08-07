@@ -1,6 +1,59 @@
-.taskbar{
-    height: 650px;
-    width: 300px;
-    background-color: antiquewhite;
-    position: relative;
+
+.taskbar {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.timePhone {
+    font-family: "SanFranciscoText-Regular", sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    color: #000;
+}
+
+.taskbarRight {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.taskbarRight img {
+    width: 24px;
+}
+
+.imageWifi {
+    width: 40px !important;
+    margin: -5.5px;
+}
+
+
+.inputPin {
+    background-color: var(--background-color);
+    color: var(--main-color);
+}
+
+.boxPin {
+    width: 100%;
+    height: 29px;
+}
+
+.pinne {
+    width: 25px;
+}
+
+.pinne img {
+    width: 38px;
+    height: 17px;
+    top: 6px;
+}
+
+.pinne div {
+    top: 9px;
+    left: 4px;
+    border-radius: 2px
 }

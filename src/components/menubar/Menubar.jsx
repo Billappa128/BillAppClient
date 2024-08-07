@@ -64,9 +64,9 @@ export default function Menubar() {
         <Icontext icon={"fa-building-columns"} text={"Bill số dư"} />
       </Link>
       <h5>MENU KHÁC</h5><i className="fa-solid "></i>
-      <a rel="noopener noreferrer" target="_blank" href="https://t.me/Billgateshop">
-      <Icontext icon={"fa-share-nodes"} text={"Kiếm tiền"} />
-        </a>
+        <Link to="/money" className="link">
+        <Icontext icon={"fa-share-nodes"} text={"Kiếm tiền"} />
+      </Link>
         <Link to="/cccd" className="link">
         <Icontext icon={"fa-shop"} text={"Tạo CCCD"} />
       </Link>

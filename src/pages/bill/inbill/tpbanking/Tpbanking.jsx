@@ -391,7 +391,7 @@ export default function Tpbanking() {
                         <span className={`${styles.transactionCode} position-absolute`}>{transactionCode}</span>
                         <span className={`${styles.senderNumber} position-absolute`}>{`${insertSpaces(senderNumber)}`}</span>
                         <span className={`${styles.senderAccount} position-absolute text-uppercase`}>{diacritics.remove(senderAccount)}</span>
-                        <span className={`${styles.receiverAccount} position-absolute text-uppercase`}>{`${insertSpaces(receiverAccount)} | ${selectedBankData.name}`}</span>
+                        <span className={`${styles.receiverAccount} position-absolute text-uppercase`}>{`${insertSpaces(receiverAccount)} | ${selectedBankData?.name}`}</span>
                         <span className={`${styles.receiverName} position-absolute text-uppercase`}>{diacritics.remove(receiverName)}</span>
                         <span className={`${styles.amountNumber} position-absolute`}>{`${formattedAmount} VND`}</span>
                         <span className={`${styles.description} position-absolute`}>{diacritics.remove(description)}</span>

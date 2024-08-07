@@ -5,7 +5,7 @@ import VCB1 from "../../../../images/billbanking/vcb/v6.jpg"
 import html2canvas from 'html2canvas';
 import { nameBank, songMappings, wifiMappings, songMappings1, wifiMappings1 } from '../../../../data';
 import logo from "../../../../images/Logo.png"
-import Pin from "../../../../images/pin/pin.png"
+import Pin from "../../../../images/pin/pin2.png"
 import DatePicker from "react-datepicker";
 import randomstring from 'randomstring';
 import { format } from 'date-fns';
@@ -402,7 +402,7 @@ export default function Vcbbanking() {
                                 <span className={`${styles.boxPin}`}>
                                     <div className={`pin-container position-relative ${styles.pinne}`}>
                                         <img className='position-absolute' src={Pin} alt='pin' />
-                                        <div className="position-absolute" style={{ height: 11, width: `calc(${pinWidth} + 2px)`, backgroundColor: pinColor }}></div>
+                                        <div className="position-absolute" style={{ height: 14, width: `calc(${pinWidth} - 4px)`, backgroundColor: pinColor }}></div>
                                     </div>
                                 </span>
                             </div>

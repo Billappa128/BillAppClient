@@ -6,7 +6,7 @@ import logo from "../../images/Logo.png"
 import Pin from "../../images/pin/pin1.png"
 import DatePicker from "react-datepicker";
 import { nanoid } from 'nanoid';
-import { format, parseISO } from 'date-fns';
+import { add, format, parseISO } from 'date-fns';
 import diacritics from 'diacritics';
 import "react-datepicker/dist/react-datepicker.css";
 import { handleSubmit } from '../../utils';
@@ -34,6 +34,9 @@ export default function Cccd() {
         dateStart: Date(),
         description: "",
         gender: "Nam",
+        addfront: "",
+        addfront1: "",
+        addfront2: "",
     });
 
     const getFormattedDate = (dateString) => {
@@ -60,7 +63,7 @@ export default function Cccd() {
     };
 
 
-    const { dateDob, dateExp, name, noNumber, nation, placeOrigin, placeResiden, dateStart, description, gender } = formState;
+    const { dateDob, dateExp, name, noNumber, nation, placeOrigin, placeResiden, dateStart, description, gender, addfront, addfront1, addfront2 } = formState;
 
 
     const handleInputChange = (event) => {
@@ -280,6 +283,39 @@ export default function Cccd() {
                                     </div>
                                 </div>
                             </div>
+                            <div className="row mb-4">
+                                <div className="col">
+                                    <div className="form-outline">
+                                        <input type="text"
+                                            name="addfront"
+                                            value={addfront}
+                                            onChange={handleInputChange}
+                                            id="form6Example1" placeholder='IDVMN...' className={`form-control ${styles.inputCus}`} />
+                                        <label className="form-label" htmlFor="form6Example1">Dòng 1</label>
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <div className="form-outline">
+                                        <input type="text"
+                                            name="addfront1"
+                                            value={addfront1}
+                                            onChange={handleInputChange}
+                                            id="form6Example1" placeholder='...' className={`form-control ${styles.inputCus}`} />
+                                        <label className="form-label" htmlFor="form6Example1">Dòng 2</label>
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <div className="form-outline">
+                                        <input type="text"
+                                            name="addfront2"
+                                            value={addfront2}
+                                            onChange={handleInputChange}
+                                            id="form6Example1" placeholder='NGUYEN<<VAN<A...' className={`form-control ${styles.inputCus}`} />
+                                        <label className="form-label" htmlFor="form6Example1">Dòng 3</label>
+                                    </div>
+                                </div>
+                              
+                            </div>
                             <button type="submit" className="btn-c btn-block mb-4">Tạo ngay</button>
                         </form>
                     </div>
@@ -310,9 +346,9 @@ export default function Cccd() {
                             <img src={images.backcccd} alt={"frontcccd"} />
                             <span className={`${styles.dateStart} position-absolute`}>{getFormattedDate(dateStart)}</span>
                             <span className={`${styles.description} position-absolute`}>
-                                <div className={styles.addfront}>{`IDVNM${noNumber.substring(3)}8${noNumber}<<8`}</div>
-                                <div className={styles.addfront}>{`${getFormattedDateBack(dateDob)}6M2627015VNM<<<<<<<<<<6`}</div>
-                                <div className={styles.addfront} style={{ textTransform: "uppercase" }}>{formatText(name)}</div>
+                                <div className={styles.addfront}>{`${addfront}`}</div>
+                                <div className={styles.addfront}>{`${addfront1}`}</div>
+                                <div className={styles.addfront} style={{ textTransform: "uppercase" }}>{`${addfront2}`}</div>
                             </span>
                         </div>
 
