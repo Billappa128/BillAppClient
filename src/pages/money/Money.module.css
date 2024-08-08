@@ -1,0 +1,72 @@
+.money{
+    gap: 1rem;
+}
+
+.right, .left{
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: var(--background-color1);
+    border-radius: 1rem;
+    font-size: 1.6rem;
+}
+
+.right h2, .left h2{
+    font-size: 3rem;
+    margin-left: 1rem;
+    color: white;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.inputForm{
+    padding: 1rem;
+}
+
+.boxInfo{
+    margin-left: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.info1{
+    width: 20rem;
+    color: var(--main-color);
+}
+
+.btnrutien{
+    padding: .5rem 1.5rem;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 1rem;
+}
+
+.btnchuyentien{
+    padding: 1rem 1.5rem;
+    background-color: var(--background-color);
+    color: var(--main-color);
+    border-radius: 1rem;
+}
+
+.boxhdsd{
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    font-size: 1.8rem;
+}
+
+.getColor{
+    color: var(--main-color);
+    margin-right: .5rem;
+}

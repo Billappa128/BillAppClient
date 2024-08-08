@@ -38,12 +38,18 @@
 
 .right {
     width: 100%;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    position: relative;
     /* width: 591px;
     height: 1280px; */
 }
 
 .righttop, .rightbottom{
     position: relative;
+    width: 668px;
+    height: 376px;
 }
 
 .righttop .avatar{
@@ -114,6 +120,13 @@
     left: 250px;
     color: #212121;
     text-transform: uppercase;
+}
+
+.qr{
+    width: 54px !important;
+    height: 54px !important;
+    top: 80px;
+    right: 150px;
 }
 
 .noNumber {
@@ -194,19 +207,19 @@
 /* Bản quyền */
 .copy{
     position: absolute;
-    top: 183px;
-    left: 49px;
+    bottom: 350px;
+    left: 50px;
     height: 150px;
-    width: 214px;
+    width: 604px;
     opacity: .6;
-    transform: rotate(30deg);
+    transform: rotate(50deg);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .copy div{
-    font-size: 20px;
+    font-size: 50px;
     color: #404656;
 }
 

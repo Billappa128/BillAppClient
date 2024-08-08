@@ -19,7 +19,7 @@ export default function Card({ item, desc, popup, banking, checking, balance }) 
                     </div>
                 </Popup> : ""}
                 {banking ? <Link to={`/bill/banking/${item.short}`} className="link">
-                    <button className="btn-c">Tạo bill ngay</button>
+                    <button disabled={item.isDisabled} className="btn-c">Tạo bill ngay</button>
                 </Link> : ""}
                 {checking ? <Link to={`/bill/checking/${item.short}`} className="link">
                     <button className="btn-c">Tạo bill ngay</button>

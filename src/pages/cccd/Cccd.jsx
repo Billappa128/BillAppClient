@@ -3,16 +3,12 @@ import styles from "./Cccd.module.css"
 import html2canvas from 'html2canvas';
 import { images } from '../../data';
 import logo from "../../images/Logo.png"
-import Pin from "../../images/pin/pin1.png"
-import DatePicker from "react-datepicker";
-import { nanoid } from 'nanoid';
-import { add, format, parseISO } from 'date-fns';
-import diacritics from 'diacritics';
 import "react-datepicker/dist/react-datepicker.css";
 import { handleSubmit } from '../../utils';
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { RemoveVietnameseAccents } from 'remove-vietnamese-accents';
+import QR from '../../images/cccd/qrcode.png'
 
 export default function Cccd() {
     const { user, dispatch } = useContext(AuthContext);
@@ -21,6 +17,7 @@ export default function Cccd() {
     // const [amountNumber, setAmountNumber] = useState("")
     const [photo, setPhoto] = useState(null);
     const componentRef = useRef(null);
+    const componentRef1 = useRef(null);
     const copyRef = useRef(null);
 
     const [formState, setFormState] = useState({
@@ -51,18 +48,6 @@ export default function Cccd() {
     };
 
 
-    const getFormattedDateBack = (dateString) => {
-        if (!dateString) return '';
-
-        const date = new Date(dateString);
-        const dayOfMonth = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const year = String(date.getFullYear()).slice(-2);
-
-        return `${year}${month}${dayOfMonth}`;
-    };
-
-
     const { dateDob, dateExp, name, noNumber, nation, placeOrigin, placeResiden, dateStart, description, gender, addfront, addfront1, addfront2 } = formState;
 
 
@@ -74,36 +59,10 @@ export default function Cccd() {
         });
     };
 
-    const formatText = (name) => {
-        // Tách chuỗi thành mảng các từ
-        const convertWords = removeVietnameseAccents.remove(name)
-        const words = convertWords.split(' ');
-        let formattedText = '';
-
-        // Duyệt qua các phần tử và tạo chuỗi định dạng
-        for (let i = 0; i < words.length; i++) {
-            if (i > 0) {
-                // Tính số lượng dấu < giữa các phần tử
-                const numOfSigns = Math.max(0, words.length - i);
-                formattedText += '<'.repeat(numOfSigns);
-            }
-            formattedText += words[i];
-        }
-
-        // Đảm bảo tổng độ dài không vượt quá 30 ký tự
-        if (formattedText.length < 27) {
-            const remainingLength = 27 - formattedText.length;
-            const filler = '<'.repeat(remainingLength);
-            formattedText += filler;
-        }
-
-        return formattedText;
-    };
-
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        // copyRef.current.style.display = "none";
+        copyRef.current.style.display = "none";
         const timestamp = Date.now(); // Lấy thời gian hiện tại dưới dạng timestamp
         const filename = `${timestamp}.png`; // Tạo tên file dựa trên timestamp
 
@@ -119,8 +78,21 @@ export default function Cccd() {
 
             // Các phần xử lý khác của handleFormSubmit
         });
-        // copyRef.current.style.display = "initial";
+        html2canvas(componentRef1.current).then(async (canvas) => {
+            const image = canvas.toDataURL();
+            const blob = await fetch(image).then((res) => res.blob());
+            const formData = new FormData();
+            formData.append("name", filename);
+            formData.append('file', blob);
+
+            // Gọi hàm handleSubmit từ utils.js và truyền các thông tin cần thiết
+            await handleSubmit(formData, user, dispatch, filename, blob);
+
+            // Các phần xử lý khác của handleFormSubmit
+        });
+        copyRef.current.style.display = "initial";
     };
+
 
     return (
         <div>
@@ -314,9 +286,9 @@ export default function Cccd() {
                                         <label className="form-label" htmlFor="form6Example1">Dòng 3</label>
                                     </div>
                                 </div>
-                              
+
                             </div>
-                            <button type="submit" className="btn-c btn-block mb-4">Tạo ngay</button>
+                            <button type='submit' className="btn-c btn-block mb-4">Tạo CCCD</button>
                         </form>
                     </div>
                     <div className={`${styles.right}`}>
@@ -330,6 +302,7 @@ export default function Cccd() {
                                 />
                             )}
                             <span className={`${styles.name} position-absolute`}>{name}</span>
+                            <img src={QR} className={`${styles.qr} position-absolute`} alt="" />
                             <span className={`${styles.noNumber} position-absolute`}>{noNumber}</span>
                             <span className={`${styles.dateDob} position-absolute`}>{getFormattedDate(dateDob)}</span>
                             <span className={`${styles.dateExp} position-absolute`}>{getFormattedDate(dateExp)}</span>
@@ -337,12 +310,9 @@ export default function Cccd() {
                             <span className={`${styles.gender} position-absolute`}>{gender}</span>
                             <span className={`${styles.placeOrigin} position-absolute`}>{placeOrigin}</span>
                             <span className={`${styles.placeResiden} position-absolute`}>{placeResiden}</span>
-                            {/* <div ref={copyRef} className={styles.copy}>
-                                <div>Bản quyền thuộc về </div>
-                                <img src={logo} alt='logo' />
-                            </div> */}
+
                         </div>
-                        <div className={`${styles.rightbottom}`}>
+                        <div ref={componentRef1} className={`${styles.rightbottom}`}>
                             <img src={images.backcccd} alt={"frontcccd"} />
                             <span className={`${styles.dateStart} position-absolute`}>{getFormattedDate(dateStart)}</span>
                             <span className={`${styles.description} position-absolute`}>
@@ -351,7 +321,10 @@ export default function Cccd() {
                                 <div className={styles.addfront} style={{ textTransform: "uppercase" }}>{`${addfront2}`}</div>
                             </span>
                         </div>
-
+                        <div ref={copyRef} className={styles.copy}>
+                            <div>Bản quyền thuộc về </div>
+                            <img src={logo} alt='logo' />
+                        </div>
 
                     </div>
                 </div>

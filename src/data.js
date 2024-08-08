@@ -86,154 +86,177 @@ export const banking = [
         short: "vcb",
         img: {
             logo: VCB
-        }
+        },
+        isDisabled: false
     },
     {
         name: "BIDV",
         short: "bidv",
         img: {
             logo: BIDV
-        }
+        },
+        isDisabled: false
+
     },
     {
         name: "BIDV VIP",
         short: "bidvv",
         img: {
             logo: BIDV
-        }
+        },
+        isDisabled: false
     },
     {
         name: "MB Bank",
         short: "mbb",
         img: {
             logo: MB
-        }
+        },
+        isDisabled: false
     },
     {
         name: "MOMO",
         short: "momo",
         img: {
             logo: MOMO
-        }
+        },
+        isDisabled: false
     },
     {
         name: "Techcombank",
         short: "tcb",
         img: {
             logo: TCB
-        }
+        },
+        isDisabled: false
     },
     {
         name: "ACB Bank",
         short: "acb",
         img: {
             logo: ACB
-        }
+        },
+        isDisabled: false
     },
     {
         name: "Agribank",
         short: "agr",
         img: {
             logo: AGR
-        }
+        },
+        isDisabled: false
     },
     {
         name: "Lienviet",
         short: "lpb",
         img: {
             logo: LPB
-        }
+        },
+        isDisabled: false
     },
     {
         name: "TP Bank",
         short: "tpb",
         img: {
             logo: TPB
-        }
+        },
+        isDisabled: false
     },
     {
         name: "VP Bank",
         short: "vpb",
         img: {
             logo: VPB
-        }
+        },
+        isDisabled: false
     },
     {
         name: "Vietinbank",
         short: "vtb",
         img: {
             logo: VTB,
-        }
+        },
+        isDisabled: false
     },
     {
         name: "MSB",
         short: "msb",
         img: {
             logo: MSB
-        }
+        },
+        isDisabled: false
     },
     {
         name: "Sacombank",
         short: "Sacom",
         img: {
             logo: icon8
-        }
+        },
+        isDisabled: false
     },
     {
         name: "HDBank",
         short: "HDB",
         img: {
             logo: icon24
-        }
+        },
+        isDisabled: false
     },
     {
         name: "Bản Việt",
         short: "BVBank",
         img: {
             logo: icon1
-        }
+        },
+        isDisabled: true
     },
     {
         name: "Saigonbank",
         short: "SGB",
         img: {
             logo: icon2
-        }
+        },
+        isDisabled: true
     },
     {
         name: "DongABank",
         short: "DAB",
         img: {
             logo: icon4
-        }
+        },
+        isDisabled: true
     },
     {
         name: "Ocenbank",
         short: "OCB",
         img: {
             logo: icon5
-        }
+        },
+        isDisabled: true
     },
     {
         name: "PVcomBank",
         short: "PVB",
         img: {
             logo: icon10
-        }
+        },
+        isDisabled: true
     },
     {
         name: "Eximbank",
         short: "Exim",
         img: {
             logo: icon25
-        }
+        },
+        isDisabled: true
     },
     {
         name: "SHB",
         short: "SHB",
         img: {
             logo: icon14
-        }
+        },
+        isDisabled: true
     },
 
 ]
