@@ -10,7 +10,7 @@ export const handleSubmit = async (formData, user, dispatch, filename, blob) => 
   const inBill = {
     photo: filename,
     author: user._id,
-    amount: 50, // Thay đổi giá trị amount thành giá trị thích hợp
+    amount: 20, // Thay đổi giá trị amount thành giá trị thích hợp
   };
   if (token) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;

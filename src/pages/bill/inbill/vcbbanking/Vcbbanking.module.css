@@ -167,7 +167,10 @@
 }
 
 .amountNumber{
-    font-family: 'NumberVCB', sans-serif !important;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .amountNumber::after {
@@ -284,4 +287,12 @@
     top: 8.5px;
     left: 15px;
     border-radius: 3px;
+}
+
+.pinNumber{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
 }

@@ -89,8 +89,9 @@ export default function Vcbbanking() {
     };
 
     const pinWidth = `${pinPercentage}%`;
+    console.log(pinPercentage)
     const pinColor = (pinPercentage < 20) ? "#ff3737" : ((selectedImage === 'image1' || selectedImage === 'image2') ? "#000" : "#FFF");
-
+    console.log(pinColor)
 
     // --------HẾT PIN 
 
@@ -402,7 +403,8 @@ export default function Vcbbanking() {
                                 <span className={`${styles.boxPin}`}>
                                     <div className={`pin-container position-relative ${styles.pinne}`}>
                                         <img className='position-absolute' src={Pin} alt='pin' />
-                                        <div className="position-absolute" style={{ height: 14, width: `calc(${pinWidth} - 4px)`, backgroundColor: pinColor }}></div>
+                                        <div className="position-absolute" style={{ height: 14, width: `calc(${pinWidth})`, backgroundColor: pinColor }}></div>
+                                        <div className={`${styles.pinNumber} position-absolute`}>{pinPercentage}</div>
                                     </div>
                                 </span>
                             </div>
