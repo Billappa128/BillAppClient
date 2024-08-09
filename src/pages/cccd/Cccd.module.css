@@ -54,11 +54,11 @@
 
 .righttop .avatar{
     position: absolute;
-    width: 90px;
-    height: 120px;
+    width: 100px;
+    height: 140px;
     object-fit: cover;
-    top: 170px;
-    left: 145px;
+    top: 151px;
+    left: 139px;
 }
 
 .right img {
@@ -189,7 +189,7 @@
 
 .description{
     color: #252525;
-    top: 230px;
+    top: 237px;
     left: 0;
     font-size: 22px;
     width: 100%;
@@ -202,6 +202,8 @@
 
 .addfront{
     font-family: 'MyCustomFont', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
 }
 
 /* Bản quyền */

@@ -112,11 +112,12 @@
 }
 
 .transactionCode {
-    font-family: "Semibold", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 24px;
-    top: 892px;
+    top: 893px;
     right: 38px;
     color: #ffffff;
+    font-weight: 600;
 }
 
 .free {
@@ -129,9 +130,10 @@
 
 
 .receiverAccount {
-    font-family: "Semibold", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 24px;
-    top: 417px;
+    font-weight: 600;
+    top: 419px;
     right: 38px;
     color: #ffffff;
 }
@@ -290,7 +292,7 @@
 }
 
 .pinNumber{
-    width: 100%;
+    width: 90%;
     text-align: center;
     font-weight: bold;
     color: white;
